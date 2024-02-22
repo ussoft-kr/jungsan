@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+.subwrap {
+    margin-top:90px;
+    margin-bottom: 70px;
+}
+
+.textbox h3 {
+    font-size:34px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 45px;
+    margin-bottom: 50px;
+}
+
+.textbox {
+    background: url('/sub/quotes.png') no-repeat right top;
+    position: relative;
+    padding-left: 40px;
+}
+
+.textbox span {
+    writing-mode: vertical-lr;
+    color: #b4b5b5;
+    position: absolute;
+    right: 0;
+    top:50px;
+}
+
+.textbox p {
+    font-size: 15px;
+    color: #555;
+    line-height: 27px;
+    margin-bottom: 30px;
+}
+
+.textbox p:last-child {
+    margin-bottom: 0;
+    color: var(--basic-personal-color);
+}
+
+.imgbox img {
+    width:100%;
+}
+
+.bottombox {
+    margin-top: 60px;
+}
+
+.bottombox p {
+    font-size: 15px;
+    color: #555;
+    line-height: 27px;
+    margin-bottom: 30px;
+}
+
+.bottombox p span {
+    font-weight: bold;
+}
+
+.signbox {
+    text-align: right;
+    margin-top: 30px;
+
+}
+
+.signbox span {
+    font-size:21px;
+    color: #8e8e8e;
+}
+
+.signbox img {
+    margin-top:-30px;
+}

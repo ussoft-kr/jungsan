@@ -34,7 +34,7 @@ function Header() {
                     </Navbar.Brand>
                     <Nav className={styles.menunav}>
                         <Nav.Item className={styles.navitem}>
-                            <Link href={''} className={'nav-link me-5'}>
+                            <Link href={'/company/intro'} className={'nav-link me-5'}>
                                 회사소개
                             </Link>
                         </Nav.Item>

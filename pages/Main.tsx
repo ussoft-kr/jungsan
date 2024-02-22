@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import NoticeLatest from "@/component/main/NoticeLatest";
+import VideoPlayer from "@/component/main/VideoPlayer";
 
 const Main:NextPage = () => {
     const settings = {
@@ -472,7 +473,7 @@ const Main:NextPage = () => {
                             <div className={styles.infobox}>
                                 <h4>JUNGSAN ENTERPRISE CO.,Ltd.</h4>
                                 <p>(주)중산기업은 언제나 최선을 다합니다.</p>
-                                <Image src={'/main/video_img.jpg'} alt={'main-img'} />
+                                <VideoPlayer videoid={'2L14cQ6XXL8'} width={'520'} height={'300'} thumsrc={'/main/video_img.jpg'} />
                             </div>
                         </Col>
                         <Col xl={6} xs={12}>

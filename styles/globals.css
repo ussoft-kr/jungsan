@@ -112,6 +112,17 @@ ul {
 }
 
 
+#submenubox .accordion-collapse.collapse.show {
+  position: absolute;
+  width:100%;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+
+#submenubox .accordion-collapse.collapsing {
+  position: absolute;
+  width:100%;
+}
+
 
 
 
