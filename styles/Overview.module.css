@@ -2,5 +2,128 @@
 
 .subwrap {
     margin-top:90px;
-    margin-bottom: 70px;
+}
+
+.section1 .contentheader {
+    text-align: center;
+    margin-bottom:40px;
+}
+
+.section1 .contentheader h3 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section1 .contentheader p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.section1 .imgbox img {
+    width: 100%;
+}
+
+.section1 .companyinfobox {
+    margin-top: 50px;
+}
+
+.subwrap h4 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.subwrap h4 img {
+    margin-top: -10px;
+    margin-right: 8px;
+}
+
+.section1 .elipse img {
+    width:40px;
+    height: 40px;
+}
+
+.section1 .elipse {
+    background: #fff;
+    width:82px;
+    height: 82px;
+    border-radius: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.section1 .infobox {
+    background: #f4f5f7;
+    min-height: 257px;
+    border-radius: 10px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.section1 .infobox span {
+    display: block;
+    font-size:13px;
+    color: #777;
+    margin-top:20px;
+    margin-bottom: 15px;
+}
+
+.section1 .infobox strong {
+    font-size:17px;
+}
+
+.section1 .infobox b {
+    display: block;
+    font-size:13px;
+}
+
+.section2 {
+    margin-top:70px;
+    background: #f4f5f7;
+    padding: 70px 0;
+}
+
+.section2 .contentbox1 strong {
+    font-size: 43px;
+    color: #d7d7d7;
+    letter-spacing: -2px;
+    margin-right: 17px;
+}
+
+.section2 .contentbox1 span {
+    font-size:21px;
+    font-weight: bold;
+    color: var(--basic-personal-color);
+}
+
+.section2 .contentbox1 {
+    margin-top:30px;
+}
+
+.section2 .infobox {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.section2 .infobox p {
+    margin-bottom: 0;
+    font-size:15px;
+    color: #323232;
+    padding-left: 10px;
+}
+
+.section2 .infobox p:before {
+    width:4px;
+    height: 4px;
+    background: #323232;
+    content:'';
+    position: absolute;
+    border-radius: 10px;
+    margin-left: -10px;
+    margin-top:10px;
 }

@@ -68,7 +68,6 @@ function SubHeader(props : SubHeaderProps) {
                                     <dl>
                                         {props.menuitem.map((item, index) => (
                                         <dd key={index}>
-
                                             <Link href={item.href}>
                                                 {item.menutitle}
                                             </Link>
