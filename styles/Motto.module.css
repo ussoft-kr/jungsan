@@ -91,6 +91,79 @@
 
 .contentbox2 .infobox .imgbox {
     text-align: right;
-    margin-right: 42px;
+
 }
+
+.contentbox2 .infobox .textbox {
+    position: absolute;
+    bottom:50px;
+}
+
+.contentbox2 .infobox .textbox h4 {
+    font-size:31px;
+    font-weight: bold;
+    letter-spacing: var(--letter-spacing-medium);
+    color: var(--basic-white-color);
+    margin-bottom: 20px;
+}
+
+.contentbox2 .infobox .textbox ul li {
+    color: var(--basic-white-color);
+    font-size: var(--font-size-15);
+    line-height: 27px;
+}
+
+.contentbox2 .box .col2 .infobox {
+    margin-top: 100px;
+}
+
+.contentbox3 {
+    margin-top:55px;
+}
+
+.contentbox3 .box {
+    margin-top:20px;
+}
+
+.contentbox3 .box .linespan {
+    background: #dedede;
+    width:100%;
+    height: 2px;
+    display: inline-block;
+    position: relative;
+}
+
+.contentbox3 .box .linespan:before {
+    width:95px;
+    height: 2px;
+    background: var(--basic-personal-color);
+    content:'';
+    position: absolute;
+}
+
+.contentbox3 .box p {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--basic-personal-color);
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.contentbox3 .bottombox {
+    margin-top:50px;
+    text-align: center;
+    border:solid 1px var(--basic-personal-color);
+    border-radius: 15px;
+    padding: 25px 0;
+}
+
+.contentbox3 .bottombox p {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: var(--basic-personal-color);
+
+}
+
+
 

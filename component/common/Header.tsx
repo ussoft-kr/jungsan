@@ -39,7 +39,7 @@ function Header() {
                             </Link>
                         </Nav.Item>
                         <Nav.Item className={styles.navitem}>
-                            <Link href={''} className={'nav-link me-5'}>
+                            <Link href={'/business/ship'} className={'nav-link me-5'}>
                                 사업소개
                             </Link>
                         </Nav.Item>

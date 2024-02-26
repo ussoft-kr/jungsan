@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+.subwrap {
+    margin-top:90px;
+}
+
+.subwrap .contentheader {
+    text-align: center;
+}
+
+.subwrap .contentheader h3 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.subwrap .contentheader p {
+    font-size:16px;
+    margin-bottom: 0;
+}
+
+.subwrap .contentbody {
+    margin-top:95px;
+}
+
+.subwrap button {
+    display: block;
+    width:70%;
+    height: 60px;
+    background: none !important;
+    border:0 !important;
+}
+
+.subwrap .disbtn {
+    font-size:20px;
+    font-weight: bold;
+    color: #b4b3b3 !important;
+}
+
+.subwrap .infobox h2 {
+    font-size:78px;
+    font-weight: bold;
+    color: #eee;
+}
+
+.subwrap .infobox .activetitlebox h2 {
+    color: var(--basic-personal-color);
+}
+
+.subwrap .infobox ul li {
+    color: #7d7d7d;
+    font-size: var(--font-size-15);
+    line-height: 35px;
+}
+
+.subwrap .infobox ul {
+    margin-top: 20px;
+}
+
+.subwrap .infobox {
+    display: flex;
+    gap:50px;
+    margin-bottom: 70px;
+}
+
+
+
+
+
+
+
+.subwrap .infobox .txtbox {
+
+}
+
+.buttonbox {
+    position: relative;
+    height: 100%;
+}
+
+.buttonbox:after {
+    height: 5000px;
+    width:2px;
+    background: #ddd;
+    content:'';
+    position: absolute;
+    top:0;
+    right:50px;
+}
+
+
+
+.buttonbox .activebtn {
+    border:solid 2px var(--basic-personal-color) !important;
+    border-radius: 30px;
+    color: var(--basic-personal-color);
+    font-size:23px;
+    font-weight: bold;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: var(--basic-personal-color);
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    right: 46px;
+    z-index: 2;
+    transition: top 0.3s ease;
+}
+
+.leftli {
+    padding-left: 10px;
+}

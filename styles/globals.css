@@ -116,11 +116,13 @@ ul {
   position: absolute;
   width:100%;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+  z-index: 2;
 }
 
 #submenubox .accordion-collapse.collapsing {
   position: absolute;
   width:100%;
+  z-index: 2;
 }
 
 

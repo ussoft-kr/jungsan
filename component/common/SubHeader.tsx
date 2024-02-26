@@ -31,12 +31,12 @@ function SubHeader(props : SubHeaderProps) {
                                     <Accordion.Body className={styles.accbody}>
                                         <dl>
                                             <dd>
-                                                <Link href={''}>
+                                                <Link href={'/company/intro'}>
                                                     회사소개
                                                 </Link>
                                             </dd>
                                             <dd>
-                                                <Link href={''}>
+                                                <Link href={'/business/ship'}>
                                                     사업소개
                                                 </Link>
                                             </dd>
