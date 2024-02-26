@@ -1,17 +1,17 @@
 import React from 'react';
-import styles from '@/styles/Ship.module.css';
+import styles from '@/styles/Plant.module.css';
 import {NextPage} from "next";
 import Layout from "@/component/common/Layout";
 import SubHeader from "@/component/common/SubHeader";
-import {Col, Container,  Image, Row} from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
 
 
-const Ship:NextPage = () => {
+const Plant:NextPage = () => {
     return (
         <Layout>
             <SubHeader
                 imgsrc={'/sub/sub_img2.jpg'}
-                title={'선박엔진 부품사업'}
+                title={'플랜트 부품사업'}
                 menuitem={[
                     {id : 1, menutitle : '선박엔진 부품사업', href: '/business/ship'},
                     {id : 2, menutitle : '플랜트 부품사업', href: '/business/plant'},
@@ -24,27 +24,27 @@ const Ship:NextPage = () => {
                 <Container>
                     <div className={styles.contentheader}>
                         <h3>
-                            고객의 <strong>신뢰</strong>와 더불어 <strong>기술과 품질의<br/>
-                            자부심을 키워가는</strong> (주)중산기업 입니다.
+                            <strong>각종 플랜트에 체결용으로 사용</strong>되며 특수재질로 제작<br />
+                            <strong>원자력 발전 터빈용으로 장착</strong>되는 볼트 및 너트
                         </h3>
                         <Row>
                             <Col xl={6} xs={12}>
                                 <div className={styles.imgbox}>
-                                    <Image src={'/sub/marine_engine_part01.jpg'} alt={'sub-img'} />
+                                    <Image src={'/sub/plant_parts01.jpg'} alt={'sub-img'} />
                                 </div>
                             </Col>
                             <Col xl={6} xs={12}>
                                 <div className={styles.imgbox}>
-                                    <Image src={'/sub/marine_engine_part02.jpg'} alt={'sub-img'} />
+                                    <Image src={'/sub/plant_parts02.jpg'} alt={'sub-img'} />
                                 </div>
                             </Col>
                         </Row>
                         <div className={styles.textbox}>
-                            <h4>Marine Engine Parts</h4>
+                            <h4>Plant Parts</h4>
                             <ul>
-                                <li>·엔진구동부위를 체결하는 제품으로 충격강도, 인장력 등의 기계적 성질이 요구되며 품질의 신뢰성이 절대적으로 요구</li>
-                                <li>·선급기관인 LR, ABS, NK, DNV/GL, KR 등의 확인 검사 완료</li>
-                                <li>·합금강을 사용하여 제작 (SNCM / SCM)</li>
+                                <li>·초고온/초저온, 초고압에서도 내구성이 높은 고기능성 제품</li>
+                                <li>·KEPIC MN/SN, ASME NQA-1의 품질보증계획 요건에 만족</li>
+                                <li>·특수합금강을 사용하여 제작 (SUPER DUPLEX, ALLOY STEEL, NICKEL ALLOY, INCONEL, BRASS, BRONZE, COPPER, TITANIUM, HASTELLOY etc.)</li>
                             </ul>
                         </div>
                     </div>
@@ -491,4 +491,4 @@ const Ship:NextPage = () => {
     )
 }
 
-export default Ship
+export default Plant

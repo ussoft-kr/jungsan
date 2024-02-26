@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.subwrap {
+    margin-top:90px;
+    margin-bottom: 70px;
+}
+
+.subwrap .contentheader {
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.subwrap .contentheader h3 {
+    font-size:32px;
+    line-height: 45px;
+    letter-spacing: var(--letter-spacing-medium);
+    margin-bottom: 65px;
+    text-align: center;
+}
