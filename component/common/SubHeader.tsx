@@ -41,7 +41,7 @@ function SubHeader(props : SubHeaderProps) {
                                                 </Link>
                                             </dd>
                                             <dd>
-                                                <Link href={''}>
+                                                <Link href={'/quality/qm'}>
                                                     품질경영
                                                 </Link>
                                             </dd>

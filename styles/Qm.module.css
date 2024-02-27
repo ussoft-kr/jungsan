@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+.subwrap {
+    margin-top:90px;
+    margin-bottom: 70px;
+}
+
+
+.subwrap h4 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.subwrap h4 img {
+    margin-top: -10px;
+    margin-right: 8px;
+}
+
+.section1 .elipse img {
+    width:40px;
+    height: 40px;
+}
+
+.subwrap caption {
+    caption-side: top;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.subwrap caption img {
+    margin-top: -10px;
+    margin-right: 8px;
+}
+
+.section1 .box {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+
+}
+
+.section1 .elipse {
+    width: 80px;
+    height: 80px;
+    border-radius: 150px;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.section1 .boxs {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+
+.section1 .textbox {
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+}
+
+.section1 h5 {
+    margin-bottom: 0;
+    font-size: var(--font-size-20);
+    font-weight: var(--font-weight-bold);
+    color: var(--basic-personal-color);
+}
+
+.section1 strong {
+    font-size: 15px;
+}
+
+.section1 span {
+    font-size: 15px;
+    color: #555;
+}
+
+.section1 .titlebox {
+    flex:0 0 13%;
+}
+
+.section1 .imgbox {
+    margin-top:80px;
+}
+
+.section1 .imgbox img {
+    width:100%;
+}
+
+.tablebox table {
+    width:100%;
+
+}
+
+.tablebox thead th {
+    vertical-align: middle;
+    text-align: center;
+    height: 55px;
+}
+
+.tablebox tbody th {
+    vertical-align: middle;
+    text-align: center;
+    border-right: solid 1px #d7d7d7;
+    border-bottom: solid 1px #d7d7d7;
+    height: 55px;
+    font-size: 14px;
+}
+
+.tablebox td {
+    vertical-align: middle;
+    text-align: center;
+    height: 55px;
+    border-bottom: solid 1px #d7d7d7;
+    border-right: solid 1px #d7d7d7;
+    font-size: 14px;
+}
+.tablebox thead {
+    background: var(--basic-personal-color);
+}
+
+.tablebox thead th {
+    height: 55px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-right: solid 1px #7475a8;
+
+}
+
+.section2 {
+    margin-top:60px;
+}

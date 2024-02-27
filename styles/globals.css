@@ -125,6 +125,15 @@ ul {
   z-index: 2;
 }
 
+#tab-box .nav-link.active {
+    border:solid 1px var(--basic-personal-color);
+    background: var(--basic-personal-color);
+    color: #fff !important;
+}
+
+#tab-box .nav {
+    gap:15px;
+}
 
 
 

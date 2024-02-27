@@ -2,13 +2,11 @@
 
 .subwrap {
     margin-top:90px;
-    margin-bottom: 70px;
 }
 
 .subwrap .contentheader {
     margin-bottom: 100px;
     padding-bottom: 50px;
-    border-bottom: solid 1px #e5e5e5;
 }
 
 .subwrap .contentheader h3 {
@@ -17,4 +15,117 @@
     letter-spacing: var(--letter-spacing-medium);
     margin-bottom: 65px;
     text-align: center;
+}
+
+.contentheader .imgbox img {
+    width:100%;
+}
+
+.contentheader dt {
+    font-size: 23px;
+    color: var(--basic-personal-color);
+    font-weight: 500;
+    border-bottom: solid 2px var(--basic-personal-color);
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+
+.contentheader h4 {
+    font-size: 28px;
+    color: var(--basic-personal-color);
+    font-weight: 500;
+    margin-bottom: 17px;
+}
+
+.contentheader .textbox {
+    margin-top: 40px;
+}
+
+.contentheader p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.contentheader dl {
+    margin-top: 40px;
+}
+
+.contentheader dl dd {
+    border-bottom: solid 1px #dadada;
+    padding: 20px 0;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.contentbody {
+    background: #f4f5f7;
+    padding: 120px 0;
+}
+
+.contentbody .titlebox h5 {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.contentbody .tabbox a {
+    background: none;
+    border: solid 1px #b4b4b4;
+    border-radius: 40px;
+    color: #a8a8a8 !important;
+    font-size: 17px;
+    padding: 12px 50px;
+}
+
+.shotspan {
+    color: var(--basic-personal-color);
+}
+
+.tabbox h5 {
+    font-size: 23px;
+    color: var(--basic-personal-color);
+    margin-bottom: 35px;
+}
+
+.tabheader {
+    margin-top: 45px;
+}
+
+.tabbox h6 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.tabbox .titlespan {
+    display: block;
+    width: 140px;
+    height: 45px;
+    color: #fff;
+    background: var(--basic-personal-color);
+    border-radius: 30px;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    line-height: 45px;
+}
+
+.tabbox ul li {
+    font-size: 15px;
+    color: #555;
+    line-height: 27px;
+}
+
+.tabbox .textbox {
+    display: flex;
+    column-gap: 140px;
+}
+
+.tabbox .section2 {
+    margin-top: 65px;
+}
+
+.tabbox .section1 {
+    padding-bottom: 70px;
+    border-bottom: solid 1px #bbb;
 }

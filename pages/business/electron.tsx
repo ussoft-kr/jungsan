@@ -79,12 +79,12 @@ const Electron:NextPage = () => {
                         <Row>
                             <Col xl={2} xs={12}>
                                 <div className={styles.titlebox}>
-                                    <h5>제품소개</h5>
+                                    <h5>전자제품<br />소개</h5>
                                 </div>
                             </Col>
                             <Col xl={10} xs={12}>
-                                <div className={styles.tabbox}>
-                                    <Tab.Container id="left-tabs-example" defaultActiveKey="tvtouch10.1">
+                                <div className={styles.tabbox} id={'tab-box'}>
+                                    <Tab.Container id="tabs" defaultActiveKey="tvtouch10.1">
                                                 <Nav variant="pills">
                                                     <Nav.Item>
                                                         <Nav.Link eventKey="tvtouch10.1">주방용 터치스크린 TV폰 10.1&#34;</Nav.Link>
@@ -157,8 +157,7 @@ const Electron:NextPage = () => {
                                                                 <span className={styles.titlespan}>제품특징</span>
                                                                 <div className={styles.textbox}>
                                                                     <ul>
-                                                                        <li>· 10.1형 TFT LCD(1024×600) / Screen Touch
-                                                                        </li>
+                                                                        <li>· 10.1형 TFT LCD(1024×600) / Screen Touch</li>
                                                                         <li>· 디지털 TV기능(OSD, EPG), 화면대기모드 시 시계표시 기능</li>
                                                                         <li>· 전면 시계 및 핫키(통화, 문열림) 적용</li>
                                                                         <li>· 모니터 조절 기능(모니터 전, 후, 좌, 우 조절)</li>
@@ -173,14 +172,53 @@ const Electron:NextPage = () => {
                                                                 <span className={styles.titlespan}>제품사양</span>
                                                                 <div className={styles.textbox}>
                                                                     <ul>
+                                                                        <li>· 설치형태 : 주방가구 상부장 부착형</li>
+                                                                        <li>· 외형 사이즈</li>
+                                                                        <li>- 본체 : 270(W)×37(H)×247(D)(mm)</li>
+                                                                        <li>- 모니터 : 270(W)×165(H)×13(D)(mm)</li>
+                                                                        <li>· 전격전압 : AC 220V</li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li>· 대기 : 4.7W±0.2 / 동작:12W</li>
+                                                                        <li>· 스피커 : 5W(8 Ω)X2 (스테레오)</li>
+                                                                        <li>· 색상 : 화이트, 블랙</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </Tab.Pane>
+                                                    <Tab.Pane eventKey="tvphone10.1">
+                                                        <div className={styles.tabcontentbox}>
+                                                            <div className={styles.tabheader}>
+                                                                <span className={styles.shotspan}>02</span>
+                                                                <h5>주방용 TV폰 10.1&#34;</h5>
+                                                            </div>
+                                                            <div className={styles.section1}>
+                                                                <h6>제품명 : JST-110 SERIES</h6>
+                                                                <Image src={'/sub/electronic_products02-1.png'}
+                                                                       alt={'sub-img'}/>
+                                                                <span className={styles.titlespan}>제품특징</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 영상 및 통화 기능</li>
+                                                                        <li>· 현관, 로비, 경비실, 문열림 및 전화 수신</li>
+                                                                        <li>· TV 및 라디오 기능 : 다각도 TV시청 스테레오 FM 라디오 청취 자동 채널 기능</li>
+                                                                        <li>· 편리기능 : 시간 표시, 시간 알람, 리모컨, 터치키 방식</li>
+                                                                        <li>· 멀티미디어 기능 : 동영상, 전자앨범, MP3, 요리백과(옵션)</li>
+                                                                        <li>· 월패트 연동기능 RS-485(RJ-45)</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <span className={styles.titlespan}>제품사양</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
                                                                         <li>· 재질 : ABS 수지</li>
                                                                         <li>· 색상 : WHITE, BLACK(MIRROR)</li>
                                                                         <li>· 모니터사양 : 오픈타입, 윈도우타입</li>
-                                                                        <li>· LCD : 10.1”TFT LCD</li>
+                                                                        <li>· LCD : 10.1&#34;TFT LCD</li>
                                                                         <li>· LED 색상 : WHITE, RED, BLUE, ORANGE</li>
                                                                         <li>· 해상도 : 1024×600</li>
                                                                         <li>· 입력전원 : AC 100~240V / 50~60Hz</li>
-                                                                        <li>· 온도 : 0~40℃· 습도 : 90% 이하(상대습도)</li>
+                                                                        <li>· 온도 : 0~40℃·</li>
                                                                     </ul>
                                                                     <ul>
                                                                         <li>· TV 수신방식 : NTSC-M, ATSC</li>
@@ -191,22 +229,150 @@ const Electron:NextPage = () => {
                                                                         <li>· 스피커 출력 : 3W×3W 스테레오</li>
                                                                         <li>· 돌비 유무 : 유</li>
                                                                         <li>· 외형 사이즈</li>
-                                                                        <li>- 본체 : 270(W)×37(H)×247(D)(mm)</li>
+                                                                        <li>- 본체 : 270(W)×23(H)×247(D)(mm)</li>
                                                                         <li>- 모니터 : 270(W)×13(H)×165(D)(mm)</li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
 
+                                                            <div className={styles.section2}>
+                                                                <h6>제품명 : JST-111</h6>
+                                                                <Image src={'/sub/electronic_products02-2.png'}
+                                                                       alt={'sub-img'}/>
+                                                                <span className={styles.titlespan}>제품특징</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 10.1형 TFT LCD(1024×600)</li>
+                                                                        <li>· 디지털 TV기능(OSD, EPG)</li>
+                                                                        <li>· 홈오토 연동으로 방문자 확인 및 문열림 기능</li>
+                                                                        <li>· 모니터 조절 기능(모니터 전, 후, 좌, 우 조절)</li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li>· 시야각 : 좌 70˚/우 70˚/상 70˚/하 50˚</li>
+                                                                        <li>· 동영상, 전자앨범, MP3 Play, 디지털 라디오, 전화수신 기능</li>
+                                                                        <li>· 리모컨 제어, 요리백과 기능(옵션)</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <span className={styles.titlespan}>제품사양</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 설치형태 : 주방가구 상부장 부착형</li>
+                                                                        <li>· 외형 사이즈</li>
+                                                                        <li>- 본체 : 270(W)×37(H)×247(D)(mm)</li>
+                                                                        <li>- 모니터 : 270(W)×165(H)×13(D)(mm)</li>
+                                                                        <li>· 전격전압 : AC 220V</li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li>· 대기 : 4.7W±0.2 / 동작:12W</li>
+                                                                        <li>· 스피커 : 3W(8 Ω)X2 (스테레오)</li>
+                                                                        <li>· 색상 : 화이트, 블랙</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </Tab.Pane>
-                                                    <Tab.Pane eventKey="tvphone10.1">
-                                                        2
-                                                    </Tab.Pane>
                                                     <Tab.Pane eventKey="bathroomphone">
-                                                        3
+                                                        <div className={styles.tabcontentbox}>
+                                                            <div className={styles.tabheader}>
+                                                                <span className={styles.shotspan}>03</span>
+                                                                <h5>욕실폰</h5>
+                                                            </div>
+                                                            <div className={styles.section1}>
+                                                                <h6>제품명 : 제품명 : JSB-101-A</h6>
+                                                                <Image src={'/sub/electronic_products03-1.png'}
+                                                                       alt={'sub-img'}/>
+                                                                <span className={styles.titlespan}>제품특징</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 센서조명 기능</li>
+                                                                        <li>- 센서로 움직임 감지 욕실폰 조명 켜짐</li>
+                                                                        <li>- 센서조명 ON/OFF 기능</li>
+                                                                        <li>· 위급 상황시 비상벨 기능</li>
+                                                                        <li>· 홈오토연동 기능(방문자 통화 및 문열림)</li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li>· 시계 기능</li>
+                                                                        <li>· 전화수신 기능</li>
+                                                                        <li>· 생활방수 기능</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <span className={styles.titlespan}>제품사양</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 설치형태 : 욕실 벽면 휴지걸이형</li>
+                                                                        <li>· 본체 사이즈 : 163(W)×92(H)×58(D)(mm)(돌출부 18mm)</li>
+                                                                        <li>· 전격전압 : DC 12V(H/A 전원 활용)</li>
+                                                                        <li>· 색상 : 화이트, 블랙</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className={styles.section2}>
+                                                                <h6>제품명 : JSB-101</h6>
+                                                                <Image src={'/sub/electronic_products03-2.png'}
+                                                                       alt={'sub-img'}/>
+                                                                <span className={styles.titlespan}>제품특징</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 위급 상황시 비상벨 기능</li>
+                                                                        <li>· 홈오토연동 기능(방문자 통화 및 문열림)</li>
+                                                                        <li>· 시계기능</li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li>· 전화수신 기능</li>
+                                                                        <li>· 생활방수 기능</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <span className={styles.titlespan}>제품사양</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 설치형태 : 욕실 벽면 휴지걸이형</li>
+                                                                        <li>· 본체 사이즈 : 163(W)×105(H)×38(D)(mm)(돌출부 18mm)</li>
+                                                                        <li>· 전격전압 : DC 12V(H/A 전원 활용)</li>
+                                                                        <li>· 색상 : 화이트, 블랙</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </Tab.Pane>
                                                     <Tab.Pane eventKey="bathroomradio">
-                                                        4
+                                                        <div className={styles.tabcontentbox}>
+                                                            <div className={styles.tabheader}>
+                                                                <span className={styles.shotspan}>04</span>
+                                                                <h5>주방라디오폰</h5>
+                                                            </div>
+                                                            <div className={styles.section1}>
+                                                                <h6>제품명 : 제품명 : JSB-101-A</h6>
+                                                                <Image src={'/sub/electronic_products04.png'}
+                                                                       alt={'sub-img'}/>
+                                                                <span className={styles.titlespan}>제품특징</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 현관, 로비, 경비실, 문열림 및 전화 송/수신</li>
+                                                                        <li>· 라디오 기능</li>
+                                                                        <li>· FM 라디오 청취 자동 채널 기능</li>
+                                                                        <li>· 시간 표시, 터치키 방식</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <span className={styles.titlespan}>제품사양</span>
+                                                                <div className={styles.textbox}>
+                                                                    <ul>
+                                                                        <li>· 재질 : ABS 수지</li>
+                                                                        <li>· 색상 : WHITE, BLACK(MIRROR)</li>
+                                                                        <li>· LED 색상 : WHITE, RED, BLUE, ORANGE</li>
+                                                                        <li>· 아이콘 실크 색상 : BLUE, ORANGE</li>
+                                                                        <li>· 입력전원 : AC 100~240V / 50~60Hz</li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li>· 온도 : 0~40℃</li>
+                                                                        <li>· 습도 : 90% 이하(상대습도)</li>
+                                                                        <li>· FM 라디오 : 87.0~108.0MHz</li>
+                                                                        <li>· 스피커 출력 : 3W×3W 스테레오</li>
+                                                                        <li>· 본체 사이즈 : 270(W)×37(H)×247(D)(mm)</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </Tab.Pane>
                                                 </Tab.Content>
 
