@@ -16,3 +16,70 @@
     margin-top: -10px;
     margin-right: 8px;
 }
+
+
+.tablebox table {
+    width:100%;
+
+}
+
+.tablebox thead th {
+    vertical-align: middle;
+    text-align: center;
+    height: 55px;
+}
+
+.tablebox tbody th {
+    vertical-align: middle;
+    text-align: center;
+    border-right: solid 1px #d7d7d7;
+    border-bottom: solid 1px #d7d7d7;
+    height: 55px;
+    font-size: 14px;
+}
+
+.tablebox td {
+    vertical-align: middle;
+    text-align: center;
+    height: 55px;
+    border-bottom: solid 1px #d7d7d7;
+    border-right: solid 1px #d7d7d7;
+    font-size: 14px;
+}
+.tablebox thead {
+    background: var(--basic-personal-color);
+}
+
+.tablebox thead th {
+    height: 55px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-right: solid 1px #7475a8;
+
+}
+
+.subwrap caption {
+    caption-side: top;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--basic-personal-color);
+}
+
+.tablebox {
+    margin-bottom: 60px;
+}
+
+.bottomth {
+    border-right: 0 !important;
+}
+
+.bottomtd {
+    border-right: 0 !important;
+}
+
+.section1 .imgbox img {
+    width:100%;
+    margin-bottom: 50px;
+}

@@ -49,7 +49,7 @@ function Header() {
                             </Link>
                         </Nav.Item>
                         <Nav.Item className={styles.navitem}>
-                            <Link href={''} className={'nav-link me-5'}>
+                            <Link href={'/community/notice'} className={'nav-link me-5'}>
                                 커뮤니티
                             </Link>
                         </Nav.Item>

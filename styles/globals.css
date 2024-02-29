@@ -135,5 +135,14 @@ ul {
     gap:15px;
 }
 
+.ck.ck-powered-by a {
+  display: none !important;
+}
+
+.ck.ck-content {
+  min-height: 300px;
+}
+
+
 
 

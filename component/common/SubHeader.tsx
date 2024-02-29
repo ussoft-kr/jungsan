@@ -46,7 +46,7 @@ function SubHeader(props : SubHeaderProps) {
                                                 </Link>
                                             </dd>
                                             <dd>
-                                                <Link href={''}>
+                                                <Link href={'/community/notice'}>
                                                     커뮤니티
                                                 </Link>
                                             </dd>
