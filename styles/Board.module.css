@@ -37,3 +37,7 @@
     position: relative;
     justify-content: center;
 }
+
+.boardtablebox table {
+    width:100%;
+}

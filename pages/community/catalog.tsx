@@ -11,8 +11,8 @@ const Catalog:NextPage = () => {
                 imgsrc={'/sub/sub_img4.jpg'}
                 title={'카탈로그'}
                 menuitem={[
-                    {id: 1, menutitle: '공지사항', href: '/community/notice'},
-                    {id: 2, menutitle: '기술자료', href: '/community/technic'},
+                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 2, menutitle: '기술자료', href: '/board/technic'},
                     {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
                     {id: 4, menutitle: '회사소식', href: '/community/video'},
                 ]}

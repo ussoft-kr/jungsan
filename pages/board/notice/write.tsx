@@ -4,71 +4,42 @@ import {NextPage} from "next";
 import Layout from "@/component/common/Layout";
 import SubHeader from "@/component/common/SubHeader";
 import {Button, Container, Form, InputGroup} from "react-bootstrap";
-import { Editor } from "primereact/editor";
 import axios from "axios";
+import dynamic from "next/dynamic";
+import {useRouter} from "next/router";
+import { extractImagesFromHTML } from '@/util/imageutils';
 
 
+const Editors = dynamic(() => import('@/component/board/Editor'), {ssr: false});
 
 const NoticeWrite:NextPage = () => {
     const [text,setText] = useState<string>('');
     const [title, setTitle] = useState<string>('');
+    const router = useRouter();
 
 
 
-
-    const handleImageUpload = async (file: string | Blob) => {
-        const formData = new FormData();
-        formData.append('image', file); // 'image'는 서버 측에서 파일 데이터를 참조하는 키입니다.
-
-        return axios.post('/api/imageupload', formData) // Content-Type 헤더를 생략합니다.
-            .then(response => {
-                // 서버로부터의 응답 처리
-                console.log(response.data);
-                return response.data.imageUrl; // 가정: 응답에서 이미지 URL을 받는다고 가정
-            })
-            .catch(error => {
-                console.error('Image upload failed:', error);
-            });
-    };
-
-
-
-    const initQuill = (quill : any) => {
-        const toolbar = quill.getModule('toolbar');
-        toolbar.addHandler('image', () => {
-            const input = document.createElement('input');
-            input.setAttribute('type', 'file');
-            input.click();
-
-            input.onchange = async () => {
-                const file = input.files ? input.files[0] : null;
-                if (file) {
-                    const imageUrl = await handleImageUpload(file);
-                    if (imageUrl) {
-                        const range = quill.getSelection();
-                        quill.insertEmbed(range.index, 'image', imageUrl);
-                    }
-                }
-            };
-        });
-    };
 
 
 
     // 폼 제출 핸들러
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event : React.FormEvent<HTMLFormElement>) => {
         event.preventDefault(); // 폼 기본 제출 동작 방지
 
+        // 에디터에서 HTML 내용과 이미지 정보 추출
+        const images = extractImagesFromHTML(text);
+
         try {
-            // 서버에 POST 요청 보내기
-            const response = await axios.post('/api/noticepost', {
+            // 제목, 에디터 내용, 이미지 정보를 포함하여 서버에 POST 요청
+            const response = await axios.post('/api/notice/noticepost', {
                 title,
                 content: text,
+                images, // 이미지 URL과 파일 이름 배열
             });
 
             console.log(response.data); // 응답 로깅
 
-            // 성공적으로 데이터를 보낸 후의 처리 (예: 폼 초기화, 알림 표시 등)
+            // 폼 초기화 등 후속 처리
             setTitle('');
             setText('');
         } catch (error) {
@@ -77,14 +48,15 @@ const NoticeWrite:NextPage = () => {
     };
 
 
+
     return (
         <Layout>
             <SubHeader
                 imgsrc={'/sub/sub_img4.jpg'}
                 title={'공지사항'}
                 menuitem={[
-                    {id: 1, menutitle: '공지사항', href: '/community/notice'},
-                    {id: 2, menutitle: '기술자료', href: '/community/technic'},
+                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 2, menutitle: '기술자료', href: '/board/technic'},
                     {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
                     {id: 4, menutitle: '회사소식', href: '/community/video'},
                 ]}
@@ -101,13 +73,9 @@ const NoticeWrite:NextPage = () => {
                                 onChange={(e) => setTitle(e.target.value)}
                             />
                         </InputGroup>
-                        <Editor
-                            value={text}
-                            onTextChange={(e) => setText(e.htmlValue ?? '')} style={{height: '320px'}}
-                            onLoad={initQuill}
-                        />
-
+                        <Editors onContentChange={(content) => setText(content)}  />
                         <Button type={'submit'}>글쓰기</Button>
+                        <Button type={'button'} onClick={() => router.back()}>취소</Button>
                     </Form>
                 </Container>
             </div>

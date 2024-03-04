@@ -13,12 +13,12 @@
     "jsx": "preserve",
     "incremental": true,
     "types": [
-      "kakao.maps.d.ts"
+      "kakao.maps.d.ts",
     ],
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "server/**/*.ts"],
   "exclude": ["node_modules"]
 }

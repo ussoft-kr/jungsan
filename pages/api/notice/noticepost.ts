@@ -1,5 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
+import {ImageInfo} from "@/util/imageutils";
+
+
+
+
 
 const prisma = new PrismaClient();
 
@@ -8,14 +13,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // POST 요청 처리
         try {
             // 요청 본문에서 title과 content 추출
-            const { title, content } = req.body;
+            const { title, content, images } = req.body;
 
             // Prisma를 사용하여 데이터베이스에 새 공지사항 추가
             const newNotice = await prisma.notice.create({
                 data: {
                     title,
                     content,
-                    // 여기서 postedAt은 자동으로 설정됩니다 (schema.prisma에서 @default(now()) 지정)
+                    attachments: {
+                        create: images.map((img: ImageInfo) => ({
+                            filePath: img.url,
+                            fileName: img.filename,
+                        }))
+                    },
                 },
             });
 

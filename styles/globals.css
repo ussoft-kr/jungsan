@@ -116,13 +116,13 @@ ul {
   position: absolute;
   width:100%;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
-  z-index: 2;
+  z-index: 3;
 }
 
 #submenubox .accordion-collapse.collapsing {
   position: absolute;
   width:100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 #tab-box .nav-link.active {
@@ -135,12 +135,8 @@ ul {
     gap:15px;
 }
 
-.ck.ck-powered-by a {
-  display: none !important;
-}
-
-.ck.ck-content {
-  min-height: 300px;
+.tox-statusbar__branding {
+  display:none;
 }
 
 
