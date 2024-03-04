@@ -37,13 +37,17 @@ const NoticeWrite:NextPage = () => {
                 images, // 이미지 URL과 파일 이름 배열
             });
 
-            console.log(response.data); // 응답 로깅
+
 
             // 폼 초기화 등 후속 처리
             setTitle('');
             setText('');
+
+            alert("글쓰기가 완료되었습니다.");
+            router.push(`/board/notice/${response.data.id}`);
         } catch (error) {
             console.error(error); // 오류 로깅
+            alert("글쓰기에 실패했습니다."); // 실패 알림
         }
     };
 

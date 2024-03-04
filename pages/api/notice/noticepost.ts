@@ -30,7 +30,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             });
 
             // 성공 응답 보내기
-            return res.status(200).json('글쓰기 성공');
+            // 새로 생성된 글의 ID를 응답으로 반환
+            return res.status(200).json({ message: "글쓰기가 완료되었습니다.", id: newNotice.id });
         } catch (error) {
             // 서버 오류 응답
             console.error("Notice post creation error:", error);
