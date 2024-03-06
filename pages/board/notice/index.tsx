@@ -4,16 +4,22 @@ import {NextPage} from "next";
 import Layout from "@/component/common/Layout";
 import SubHeader from "@/component/common/SubHeader";
 import BoardSearch from "@/component/board/BoardSearch";
-import {Button, Container, Form} from "react-bootstrap";
+import {Button, Container, Form, Image} from "react-bootstrap";
 import Link from "next/link";
 import axios from "axios";
+import {useRouter} from "next/router";
+import Pagenation from "@/component/board/Pagenation";
 
+
+export interface FileInfoTypes {
+    path: string;
+}
 
 export interface NoticeTypes {
     id: number;
     title: string;
     content: string;
-    attachments: { id: number; filePath: string; fileName: string; }[];
+    boardfile:FileInfoTypes[];
     postedAt: Date;
 }
 
@@ -21,20 +27,35 @@ const NoticeIndex:NextPage = () => {
 
     const [notices, setNotices] = useState<NoticeTypes[]>([]); // Notice[] 타입으로 초기화
     const [checkedState, setCheckedState] = useState<{ [key: number]: boolean }>({});
-
-
+    const [totalNotices, setTotalNotices] = useState(0);
+    const router = useRouter();
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10; // 한 페이지에 표시할 항목 수
+    const totalPages = Math.ceil(totalNotices / itemsPerPage); // 총 페이지 수 계산
 
     useEffect(() => {
-        const fetchNotices = async () => {
-            try {
-                const response = await axios.get('/api/notice/noticelist');
-                setNotices(response.data);
-            } catch (error) {
-                console.log('목록을 불러오는데 실패하였습니다', error);
-            }
-        };
         fetchNotices();
-    }, []);
+    }, [router.query.search]); // URL의 search 쿼리 파라미터가 변경될 때마다 fetchNotices 호출
+
+    const fetchNotices = async (page: number = currentPage) => {
+        // 현재 페이지 번호와 검색 쿼리를 기반으로 쿼리 파라미터를 구성합니다.
+        const searchQuery = router.query.search;
+        const queryParam = `${searchQuery ? `search=${encodeURIComponent(searchQuery as string)}&` : ''}page=${page}`;
+        try {
+            const response = await axios.get(`/api/notice/noticelist?${queryParam}`);
+            setNotices(response.data.notices);
+            setTotalNotices(response.data.total);
+            // 페이지 변경 후 URL의 페이지 쿼리 파라미터 업데이트 (선택적)
+            router.push(`/board/notice?${queryParam}`, undefined, { shallow: true });
+        } catch (error) {
+            console.error('목록을 불러오는데 실패하였습니다', error);
+        }
+    };
+
+    const handleSearch = (searchTerm: string) => {
+        // URL을 업데이트하여 검색어를 반영
+        router.push(`/board/notice?search=${encodeURIComponent(searchTerm)}`);
+    };
 
     const handleCheck = (id: number, checked: boolean) => {
         setCheckedState(prevState => ({
@@ -46,6 +67,7 @@ const NoticeIndex:NextPage = () => {
     const handleDeleteChecked = async () => {
         const isConfirmed = window.confirm("정말 삭제하겠습니까? 삭제된 데이터들은 복구가 불가능합니다.");
 
+
         if (!isConfirmed) {
             // 사용자가 '아니오'를 클릭한 경우, 함수 실행 종료
             return;
@@ -56,6 +78,11 @@ const NoticeIndex:NextPage = () => {
             if (isChecked) acc.push(Number(id));
             return acc;
         }, []);
+
+        if (checkedIds.length === 0) {
+            window.alert("게시물을 체크 하신 후 삭제버튼을 클릭 하시기 바랍니다.");
+            return; // 함수 종료
+        }
 
         try {
             // DELETE 요청을 /api/notice/delete로 보내고, 체크된 게시물 ID들을 body에 포함
@@ -77,9 +104,10 @@ const NoticeIndex:NextPage = () => {
         }
     };
 
-
-
-
+    const handlePageChange = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+        fetchNotices(pageNumber);
+    };
 
 
     return (
@@ -88,18 +116,18 @@ const NoticeIndex:NextPage = () => {
                 imgsrc={'/sub/sub_img4.jpg'}
                 title={'공지사항'}
                 menuitem={[
-                    {id: 1, menutitle: '공지사항', href: '/community/notice'},
-                    {id: 2, menutitle: '기술자료', href: '/community/technic'},
+                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 2, menutitle: '기술자료', href: '/board/technic'},
                     {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
                     {id: 4, menutitle: '회사소식', href: '/community/video'},
                 ]}
             />
             <div className={styles.subwrap}>
                 <Container>
-                    <BoardSearch />
+                    <BoardSearch onSearch={handleSearch} />
                     <div className={styles.boardtablebox}>
                         <table>
-                            <caption>전체 <span>10</span>건</caption>
+                            <caption>전체 <span>{totalNotices}</span>건</caption>
                             <thead>
                             <tr>
                                 <th>
@@ -130,7 +158,7 @@ const NoticeIndex:NextPage = () => {
                                         </Link>
                                     </td>
                                     <td className={styles.atttd}>
-                                        {item.attachments.length > 0 ? '첨부파일 있음' : '없음'}
+                                        {item.boardfile && item.boardfile.length > 0 ? <Image src={'/sub/file.svg'} alt={'sub-icon'} /> : 'X'}
                                     </td>
                                     <td className={styles.datetd}>
                                         {new Date(item.postedAt).toLocaleDateString()}
@@ -142,13 +170,14 @@ const NoticeIndex:NextPage = () => {
                         </table>
                     </div>
                     <div className={styles.buttonbox}>
-                        <Button type={'button'}>
+                        <Button type={'button'} className={styles.writebtn}>
                             <Link href={'/board/notice/write'}>
                                 글쓰기
                             </Link>
                         </Button>
-                        <Button type={'button'} onClick={handleDeleteChecked}>삭제</Button>
+                        <Button type={'button'} onClick={handleDeleteChecked} className={styles.deletebtn}>선택삭제</Button>
                     </div>
+                    <Pagenation currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
                 </Container>
             </div>
         </Layout>

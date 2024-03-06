@@ -26,10 +26,12 @@ function EditorComponent({onContentChange, initialValue = ''} : EditorComponentP
                 onContentChange(newValue);
             }}
             init={{
-                height: 500,
+                height: 700,
                 menubar: true,
                 relative_urls:false,
                 remove_script_host:false,
+                language: 'ko_KR',
+                language_url: '/lang/ko_KR.js',
                 plugins: [
                     'lists',
                     'link',
@@ -47,7 +49,7 @@ function EditorComponent({onContentChange, initialValue = ''} : EditorComponentP
                     'quickbars',
                 ],
                 //images_file_types : 'jpeg jpg gif png svg',
-                images_upload_url: process.env.REACT_APP_UPLOAD_URL || 'http://localhost:3000/data/board',
+                images_upload_url: `${window.location.origin}/data/board`,
                 tinycomments_mode: 'embedded',
                 tinycomments_author: 'Author name',
                 toolbar:

@@ -15,3 +15,11 @@ export type User = {
     updatedAt: Date;
     role: 'ADMIN' | 'USER';  // UserRole 타입
 };
+
+
+export interface FileInfo {
+    filePath: string;
+    fileName: string;
+}
+
+

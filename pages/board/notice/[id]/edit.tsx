@@ -4,9 +4,10 @@ import axios from 'axios';
 import Layout from "@/component/common/Layout";
 import styles from "@/styles/Board.module.css";
 import SubHeader from "@/component/common/SubHeader";
-import {Container, Form} from "react-bootstrap";
+import {Button, Container, Form, InputGroup} from "react-bootstrap";
 import dynamic from "next/dynamic";
 import { extractImagesFromHTML } from '@/util/imageutils';
+import Link from "next/link";
 
 
 
@@ -47,6 +48,7 @@ const EditNotice = () => {
                 images,
             });
             // 성공 응답 후 처리, 예: 수정된 글의 상세 페이지로 리다이렉션
+            alert("수정되었습니다.");
             router.push(`/board/notice/${id}`);
         } catch (error) {
             console.error("글 수정에 실패했습니다.", error);
@@ -56,30 +58,38 @@ const EditNotice = () => {
 
     return (
         <Layout>
-            <div className={styles.correctionwrap}>
-                <SubHeader
-                    imgsrc={'/sub/sub_img4.jpg'}
-                    title={'공지사항'}
-                    menuitem={[
-                        {id: 1, menutitle: '공지사항', href: '/board/notice'},
-                        {id: 2, menutitle: '기술자료', href: '/board/technic'},
-                        {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
-                        {id: 4, menutitle: '회사소식', href: '/community/video'},
-                    ]}
-                />
+            <SubHeader
+                imgsrc={'/sub/sub_img4.jpg'}
+                title={'공지사항'}
+                menuitem={[
+                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 2, menutitle: '기술자료', href: '/board/technic'},
+                    {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
+                    {id: 4, menutitle: '회사소식', href: '/community/video'},
+                ]}
+            />
+            <div className={styles.writewrap}>
                 <Container>
                     <div className={styles.box}>
                         <form onSubmit={handleSubmit}>
-                            <Form.Control
-                                type={'text'}
-                                required
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
-
+                            <InputGroup className={styles.writegroupbox}>
+                                <Form.Control
+                                    type={'text'}
+                                    required
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    className={styles.titleinput}
                                 />
-
+                            </InputGroup>
                             <Editors onContentChange={(content) => setContent(content)} initialValue={content} />
-                            <button type="submit">저장</button>
+                            <div className={styles.buttonbox}>
+                                <Button type="submit" className={styles.writebtn}>수정</Button>
+                                <Button type={'button'} className={styles.cenclebtn}>
+                                    <Link href={'/board/notice'}>
+                                        취소
+                                    </Link>
+                                </Button>
+                            </div>
                         </form>
                     </div>
                 </Container>

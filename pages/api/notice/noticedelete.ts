@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
 
         // 성공 응답
-        return res.status(200).json({ message: 'Notices and their attachments have been deleted successfully.' });
+        return res.status(200).json({ message: 'Notices and their  have been deleted successfully.' });
     } catch (error) {
         console.error('Error deleting notices:', error);
         // 에러 응답

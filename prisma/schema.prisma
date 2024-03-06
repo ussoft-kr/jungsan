@@ -23,6 +23,7 @@ model Notice {
   title       String
   content     String             @db.LongText
   postedAt    DateTime           @default(now())
+  boardfile   Json?
   attachments NoticeAttachment[]
 }
 

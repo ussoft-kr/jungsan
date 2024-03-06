@@ -1,3 +1,4 @@
+// pages/api/notice/[id].ts
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 
@@ -7,17 +8,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { id } = req.query; // URL에서 id 파라미터를 추출합니다.
 
     if (req.method === 'GET') {
+        const numericId = Number(id);
         try {
-            // ID를 이용하여 데이터베이스에서 해당 공지사항 조회
+            // 현재 공지사항 조회
             const notice = await prisma.notice.findUnique({
-                where: { id: Number(id) }, // id는 문자열로 넘어오므로, 숫자로 변환해야 합니다.
+                where: { id: numericId },
                 include: {
                     attachments: true, // 첨부파일 정보도 함께 조회합니다.
                 },
             });
 
+            // 이전 공지사항 조회
+            const prevNotice = await prisma.notice.findFirst({
+                where: { id: { lt: numericId } },
+                orderBy: { id: 'desc' },
+            });
+
+            // 다음 공지사항 조회
+            const nextNotice = await prisma.notice.findFirst({
+                where: { id: { gt: numericId } },
+                orderBy: { id: 'asc' },
+            });
+
             if (notice) {
-                res.status(200).json(notice);
+                res.status(200).json({ notice, prevNotice, nextNotice });
             } else {
                 res.status(404).json({ message: "해당 공지사항을 찾을 수 없습니다." });
             }
