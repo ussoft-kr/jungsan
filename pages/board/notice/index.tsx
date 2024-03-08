@@ -1,27 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import styles from '@/styles/Board.module.css';
+import styles from 'styles/Board.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
-import BoardSearch from "@/component/board/BoardSearch";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
+import BoardSearch from "component/board/BoardSearch";
 import {Button, Container, Form, Image} from "react-bootstrap";
 import Link from "next/link";
 import axios from "axios";
 import {useRouter} from "next/router";
-import Pagenation from "@/component/board/Pagenation";
+import Pagenation from "component/board/Pagenation";
+import {NoticeTypes} from "types/type";
 
 
-export interface FileInfoTypes {
-    path: string;
-}
 
-export interface NoticeTypes {
-    id: number;
-    title: string;
-    content: string;
-    boardfile:FileInfoTypes[];
-    postedAt: Date;
-}
 
 const NoticeIndex:NextPage = () => {
 
@@ -35,7 +26,7 @@ const NoticeIndex:NextPage = () => {
 
     useEffect(() => {
         fetchNotices();
-    }, [router.query.search]); // URL의 search 쿼리 파라미터가 변경될 때마다 fetchNotices 호출
+    }, [router.query.search]);
 
     const fetchNotices = async (page: number = currentPage) => {
         // 현재 페이지 번호와 검색 쿼리를 기반으로 쿼리 파라미터를 구성합니다.

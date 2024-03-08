@@ -1,8 +1,8 @@
-import styles from '@/styles/Layout.module.css';
+import styles from 'styles/Layout.module.css';
 import {PropsWithChildren} from "react";
-import TopHead from "@/component/common/TopHead";
-import Header from "@/component/common/Header";
-import Footer from "@/component/common/Footer";
+import TopHead from "component/common/TopHead";
+import Header from "component/common/Header";
+import Footer from "component/common/Footer";
 
 function Layout({children} : PropsWithChildren) {
     return (

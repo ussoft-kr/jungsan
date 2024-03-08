@@ -1,4 +1,4 @@
-import styles from '@/styles/Layout.module.css';
+import styles from 'styles/Layout.module.css';
 import {Button, Container, Form, Image, Nav, Navbar} from "react-bootstrap";
 import Link from "next/link";
 import {useEffect, useState} from "react";

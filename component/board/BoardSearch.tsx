@@ -1,12 +1,11 @@
 import React, {useState, KeyboardEvent} from 'react';
-import styles from '@/styles/Board.module.css';
+import styles from 'styles/Board.module.css';
 import {Button, Form, Image, InputGroup} from "react-bootstrap";
 import {useRouter} from "next/router";
+import { BoardSearchProps } from 'types/type';
 
 
-interface BoardSearchProps {
-    onSearch: (searchTrem : string) => void;
-}
+
 
 
 function BoardSearch(props:BoardSearchProps) {

@@ -13,10 +13,14 @@
     "jsx": "preserve",
     "incremental": true,
     "types": [
-      "kakao.maps.d.ts",
+      "kakao.maps.d.ts"
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/component" : ["component/"],
+      "@/styles" : ["styles/"],
+      "@/pages" : ["pages/"],
+      "@/types" : ["types/"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "server/**/*.ts"],

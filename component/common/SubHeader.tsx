@@ -1,15 +1,12 @@
 import React from 'react';
-import styles from '@/styles/Layout.module.css';
+import styles from 'styles/Layout.module.css';
 import {Accordion, Container, Image} from "react-bootstrap";
 import Link from "next/link";
+import { SubHeaderProps } from 'types/type';
 
 
 
-interface SubHeaderProps {
-    imgsrc : string;
-    title : string;
-    menuitem : { id : number; menutitle : string; href : string;}[];
-}
+
 
 function SubHeader(props : SubHeaderProps) {
     return(

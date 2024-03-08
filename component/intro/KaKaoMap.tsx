@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '@/styles/Location.module.css';
+import styles from 'styles/Location.module.css';
 import {Map, MapMarker} from "react-kakao-maps-sdk"
-import useKakaoLoader from "@/component/intro/useKakaoLoader";
+import useKakaoLoader from "component/intro/useKakaoLoader";
 
 function KaKaoMap() {
     useKakaoLoader()

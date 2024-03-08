@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
-import styles from '@/styles/History.module.css';
+import styles from 'styles/History.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
 import {Button, Col, Container, Row} from "react-bootstrap";
 
 const History:NextPage = () => {

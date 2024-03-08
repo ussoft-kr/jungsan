@@ -1,11 +1,9 @@
 import React, {useRef, useState} from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import {EditorComponentProps} from "types/type";
 
 
-interface EditorComponentProps {
-    onContentChange: (newValue: string) => void;
-    initialValue?: string;
-}
+
 
 
 

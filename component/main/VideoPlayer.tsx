@@ -1,13 +1,9 @@
 import React, {useState} from 'react';
 import {Image} from "react-bootstrap";
+import { VideoPlayerProps } from 'types/type';
 
 
-interface VideoPlayerProps {
-    videoid : string;
-    width : string;
-    height : string;
-    thumsrc? : string;
-}
+
 
 function VideoPlayer(props : VideoPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false);

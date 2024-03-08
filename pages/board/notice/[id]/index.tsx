@@ -1,12 +1,12 @@
 import {useRouter} from 'next/router';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Layout from '@/component/common/Layout';
-import {NoticeTypes} from "@/pages/board/notice";
-import SubHeader from "@/component/common/SubHeader";
-import styles from '@/styles/Board.module.css';
+import Layout from 'component/common/Layout';
+import SubHeader from "component/common/SubHeader";
+import styles from 'styles/Board.module.css';
 import {Button, Container} from "react-bootstrap";
 import Link from "next/link";
+import {NoticeTypes} from "types/type";
 
 const NoticeDetailPage = () => {
     const router = useRouter();
@@ -99,7 +99,7 @@ const NoticeDetailPage = () => {
                                                 notice.boardfile.map((file, index) => (
 
                                                     <span key={index}>
-                                                    <Link href={file.path} target="_blank" rel="noopener noreferrer">
+                                                    <Link href={file.path} target="_blank" rel="noopener noreferrer" download>
                                                         {file.path.split('/').pop()}
                                                     </Link>
                                                 </span>

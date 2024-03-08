@@ -1,13 +1,13 @@
 import React from 'react';
 import {NextPage} from "next";
-import styles from '@/styles/Main.module.css';
+import styles from 'styles/Main.module.css';
 import Slider from "react-slick";
 import {Button, Col, Container, Form, Image, InputGroup, Row} from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-import NoticeLatest from "@/component/main/NoticeLatest";
-import VideoPlayer from "@/component/main/VideoPlayer";
+import NoticeLatest from "component/main/NoticeLatest";
+import VideoPlayer from "component/main/VideoPlayer";
 
 const Main:NextPage = () => {
     const settings = {

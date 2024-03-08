@@ -1,5 +1,5 @@
 import { Pagination } from "react-bootstrap";
-import styles from '@/styles/Board.module.css';
+import styles from 'styles/Board.module.css';
 
 
 interface PaginationProps {

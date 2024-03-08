@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '@/styles/Product.module.css';
+import styles from 'styles/Product.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
 import {Container, Image} from "react-bootstrap";
 
 const Product: NextPage = () => {

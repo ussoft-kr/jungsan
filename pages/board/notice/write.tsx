@@ -1,19 +1,18 @@
 import React, {ChangeEvent, useState} from 'react';
-import styles from '@/styles/Board.module.css';
+import styles from 'styles/Board.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
 import {Button, Container, Form, InputGroup} from "react-bootstrap";
 import axios from "axios";
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
-import { extractImagesFromHTML } from '@/util/imageutils';
+import {FileInput} from "types/type";
 
-interface FileInput {
-    file: File | null;
-}
 
-const Editors = dynamic(() => import('@/component/board/Editor'), {ssr: false});
+
+
+const Editors = dynamic(() => import('component/board/Editor'), {ssr: false});
 
 const NoticeWrite:NextPage = () => {
     const [text,setText] = useState<string>('');

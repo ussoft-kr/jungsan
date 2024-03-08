@@ -337,3 +337,17 @@
     margin-bottom: 10px;
 
 }
+
+.fileDisplay .closebtn {
+    font-size: 10px;
+    padding: 0;
+    margin-left: 5px;
+    box-shadow: none !important;
+}
+.fileDisplay {
+    margin-right: 20px;
+}
+
+.fileDisplay:last-child {
+    margin-right: 0;
+}

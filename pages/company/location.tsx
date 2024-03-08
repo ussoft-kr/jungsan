@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '@/styles/Location.module.css';
+import styles from 'styles/Location.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
-import KaKaoMap from "@/component/intro/KaKaoMap";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
+import KaKaoMap from "component/intro/KaKaoMap";
 import {Container, Image} from "react-bootstrap";
 
 

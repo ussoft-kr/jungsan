@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '@/styles/Video.module.css';
+import styles from 'styles/Video.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
 
 const Video:NextPage = () => {
     return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '@/styles/Electron.module.css';
+import styles from 'styles/Electron.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
 import {Col, Container, Image, Nav, Row, Tab} from "react-bootstrap";
 
 const Electron:NextPage = () => {

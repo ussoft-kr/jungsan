@@ -1,58 +1,98 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import axios from 'axios';
-import Layout from "@/component/common/Layout";
-import styles from "@/styles/Board.module.css";
-import SubHeader from "@/component/common/SubHeader";
-import {Button, Container, Form, InputGroup} from "react-bootstrap";
+import {Button, CloseButton, Container, Form, InputGroup} from "react-bootstrap";
 import dynamic from "next/dynamic";
-import { extractImagesFromHTML } from '@/util/imageutils';
 import Link from "next/link";
+import { FileInput } from 'types/type';
+import Layout from 'component/common/Layout';
+import SubHeader from 'component/common/SubHeader';
+import styles from "styles/Board.module.css";
 
 
 
-const Editors = dynamic(() => import('@/component/board/Editor'), {ssr: false});
+const Editors = dynamic(() => import('component/board/Editor'), {ssr: false});
 
 const EditNotice = () => {
     const router = useRouter();
     const { id } = router.query;
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const [images, setImages] = useState('');
+    const [title, setTitle] = useState<string>('');
+    const [text,setText] = useState('');
+    const [fileInputs, setFileInputs] = useState<FileInput[]>([{ file: null }]);
 
+
+// 데이터를 불러올 때
     useEffect(() => {
         if (id) {
             axios.get(`/api/notice/${id}`).then((response) => {
-                const { title, content, images } = response.data;
-                setTitle(title);
-                setContent(content);
-                setImages(images);
+                const { title, content, boardfile } = response.data.notice;
+                setTitle(title || ''); // API로부터 받은 값이 undefined일 경우 빈 문자열 사용
+                setText(content || ''); // 동일하게 적용
+                const initialFileInputs = boardfile.map((file: { path: string; }) => ({
+                    file: null, // 새로운 파일을 위한 공간
+                    path: file.path, // 기존 파일 경로
+                }));
+                setFileInputs([...initialFileInputs, { file: null }]); // 기존 파일 정보와 새 파일 입력을 위한 공간 추가
+            }).catch(error => {
+                console.error("공지사항 불러오기 실패:", error);
             });
         }
     }, [id]);
 
 
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault(); // 폼 기본 제출 동작 방지
 
-        // 이미지 정보 추출 로직이 필요한 경우 여기에 추가
-        const images = extractImagesFromHTML(content);
+
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('content', text);
+
+        fileInputs.forEach((input, index) => {
+            if (input.file) {
+                formData.append(`files`, input.file); // 새로운 파일 추가
+            } else if (input.path) {
+                // 기존 파일의 경로를 formData에 추가합니다. 서버에서 이를 구분할 수 있어야 합니다.
+                formData.append(`existingFiles[${index}][path]`, input.path);
+            }
+        });
 
         try {
-            // 수정된 제목, 내용, (필요한 경우 이미지 정보)를 포함하여 서버에 PUT 요청
-            await axios.put(`/api/notice/noticeupdate`, {
-                id,
-                title,
-                content,
-                images,
+            const response = await axios.put(`/api/notice/noticeupdate`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
             });
-            // 성공 응답 후 처리, 예: 수정된 글의 상세 페이지로 리다이렉션
-            alert("수정되었습니다.");
-            router.push(`/board/notice/${id}`);
+
+            alert("글 수정이 완료되었습니다.");
+            router.push(`/board/notice/${response.data.id}`);
         } catch (error) {
-            console.error("글 수정에 실패했습니다.", error);
+            console.error("Error submitting the form:", error);
+            alert("글 수정에 실패했습니다.");
         }
+    };
+
+
+
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>, index: number) => {
+        const newFile = event.target.files ? event.target.files[0] : null;
+        let updatedFileInputs = [...fileInputs];
+        updatedFileInputs[index] = { file: newFile };
+
+        // 마지막 입력 필드에 파일이 추가되면 새 입력 필드 추가
+        if (index === fileInputs.length - 1 && newFile) {
+            updatedFileInputs.push({ file: null });
+        }
+
+        setFileInputs(updatedFileInputs);
+    };
+
+    const handleRemoveFile = (removeIndex: number) => {
+        setFileInputs(prevInputs =>
+            prevInputs.filter((_, index) => index !== removeIndex)
+        );
     };
 
 
@@ -81,7 +121,41 @@ const EditNotice = () => {
                                     className={styles.titleinput}
                                 />
                             </InputGroup>
-                            <Editors onContentChange={(content) => setContent(content)} initialValue={content} />
+                            <Editors onContentChange={(content) => setText(content)} initialValue={text}/>
+
+
+                            <div className={styles.attchbox}>
+                                <Form.Label className={'me-3'}>첨부파일</Form.Label>
+                                {fileInputs.map((input, index) => (
+                                    // 기존 첨부파일 표시
+                                    input.path ? (
+                                        <span key={`existing-${index}`} className={styles.fileDisplay}>
+                                            <Link href={input.path} download>
+                                                {input.path.split('/').pop()}
+                                            </Link>
+                                            <CloseButton className={styles.closebtn} onClick={() => handleRemoveFile(index)} />
+                                        </span>
+                                    ) : (
+                                        // 새 파일 업로드 입력 필드
+                                        <Form.Group key={`new-${index}`} controlId={`fileInput-${index}`} className={'mt-1'}>
+                                            <Form.Control
+                                                type='file'
+                                                className={styles.fileinput}
+                                                onChange={(e) => handleFileChange(e as ChangeEvent<HTMLInputElement>, index)}
+                                            />
+                                        </Form.Group>
+                                    )
+                                ))}
+                                {/* 사용자가 새 파일을 추가할 수 있도록 항상 빈 입력 필드 추가 */}
+                                <Form.Group controlId={`fileInput-new`}>
+                                    <Form.Control
+                                        type='file'
+                                        className={styles.fileinput}
+                                        onChange={(e) => handleFileChange(e as ChangeEvent<HTMLInputElement>, fileInputs.length)}
+                                    />
+                                </Form.Group>
+                            </div>
+
                             <div className={styles.buttonbox}>
                                 <Button type="submit" className={styles.writebtn}>수정</Button>
                                 <Button type={'button'} className={styles.cenclebtn}>

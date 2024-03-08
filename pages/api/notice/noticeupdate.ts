@@ -2,9 +2,11 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
-import { ImageInfo } from '@/util/imageutils';
 
-const prisma = new PrismaClient();
+
+const prisma = new PrismaClient({
+    log: ['query', 'info', 'warn', 'error'],
+});
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'PUT') {
@@ -20,15 +22,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             data: {
                 title,
                 content,
-                // 기존 첨부파일 처리 로직이 필요한 경우 여기에 추가
-                attachments: {
-                    // 예: 기존 첨부파일 삭제 후 새로운 파일 정보로 업데이트
-                    deleteMany: {},
-                    create: images.map((img: ImageInfo) => ({
-                        filePath: img.url,
-                        fileName: img.filename,
-                    })),
-                },
             },
         });
 

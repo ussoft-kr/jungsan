@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '@/styles/Motto.module.css';
+import styles from 'styles/Motto.module.css';
 import {NextPage} from "next";
-import Layout from "@/component/common/Layout";
-import SubHeader from "@/component/common/SubHeader";
+import Layout from "component/common/Layout";
+import SubHeader from "component/common/SubHeader";
 import {Col, Container, Image, Row} from "react-bootstrap";
 
 
