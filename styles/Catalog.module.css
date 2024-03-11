@@ -15,3 +15,44 @@
     margin-top: -10px;
     margin-right: 8px;
 }
+
+.cataloguebox .infobox {
+    text-align: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.cataloguebox .infobox .imgspan img {
+    width:18px;
+    height: 18px;
+}
+
+.cataloguebox .infobox .infoheader {
+    padding: 25px 0;
+}
+
+.cataloguebox .infobox .infoheader p {
+    font-size:17px;
+}
+
+.downloadbox a {
+    padding: 15px 0;
+    background: var(--basic-personal-color);
+    display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+ .downloadbox a span {
+    color: #fff;
+    font-weight: bold;
+}
+
+ .downloadbox a span.textspan {
+    margin-right: 7px;
+}
+
+ .downloadbox a span.imgspan {
+    position: relative;
+    top:-1px;
+}

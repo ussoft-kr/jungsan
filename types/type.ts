@@ -39,6 +39,15 @@ export interface NoticeTypes {
     postedAt: Date;
 }
 
+
+export interface TechnicTypes {
+    id: number;
+    title: string;
+    content: string;
+    boardfile:FileInfoTypes[];
+    postedAt: Date;
+}
+
 export interface EditorComponentProps {
     onContentChange: (newValue: string) => void;
     initialValue?: string;
@@ -88,7 +97,7 @@ export const NoticeLatestData:Array<NoticeLatestProps> = [
 
 
 export interface VideoPlayerProps {
-    videoid : string;
+    videoid? : string;
     width : string;
     height : string;
     thumsrc? : string;

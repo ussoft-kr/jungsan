@@ -351,3 +351,57 @@
 .fileDisplay:last-child {
     margin-right: 0;
 }
+
+
+.technicbox .imgspan img {
+    width:18px;
+    height: 18px;
+}
+
+.technicbox .infobox {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.technicbox .infobox .infoheader {
+    padding: 27px;
+}
+
+.technicbox .infobox .infoheader span {
+    color:#969696;
+    font-size:15px;
+}
+
+.technicbox .infobox .infoheader h4 {
+    font-size:28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    margin-top:13px;
+}
+
+.technicbox .infobox .downloadbox {
+    background: var(--basic-personal-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+.technicbox .infobox .downloadbox a {
+    padding: 21px 0;
+    display: block;
+}
+
+.technicbox .infobox .downloadbox a span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.technicbox .infobox .downloadbox a span.textspan {
+    margin-right: 7px;
+}
+
+.technicbox .infobox .downloadbox a span.imgspan {
+    position: relative;
+    top:-1px;
+}

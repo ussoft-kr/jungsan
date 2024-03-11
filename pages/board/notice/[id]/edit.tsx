@@ -41,33 +41,59 @@ const EditNotice = () => {
 
 
 
-
-
-
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = new FormData();
-        formData.append('title', title);
-        formData.append('content', text);
 
+        // 첨부 파일 업로드를 위한 FormData 생성
+        const uploadFormData = new FormData();
         fileInputs.forEach((input, index) => {
             if (input.file) {
-                formData.append(`files`, input.file); // 새로운 파일 추가
-            } else if (input.path) {
-                // 기존 파일의 경로를 formData에 추가합니다. 서버에서 이를 구분할 수 있어야 합니다.
-                formData.append(`existingFiles[${index}][path]`, input.path);
+                uploadFormData.append(`files`, input.file);
             }
         });
 
         try {
-            const response = await axios.put(`/api/notice/noticeupdate`, formData, {
+
+            // 첨부 파일 업로드
+            const uploadResponse = await axios.post('/api/upload', uploadFormData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
 
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('content', text);
+            formData.append('id', id?.toString() ?? 'defaultId');
+
+
+            fileInputs.forEach((input, index) => {
+                if (input.file) {
+                    formData.append(`files`, input.file); // 새로운 파일 추가
+                } else if (input.path) {
+                    // 기존 파일의 경로를 formData에 추가합니다. 서버에서 이를 구분할 수 있어야 합니다.
+                    formData.append(`existingFiles[${index}][path]`, input.path);
+                }
+            });
+
+            uploadResponse.data.files.forEach((file: {
+                originalname: string;
+                path: string }, index: number) => {
+                formData.append(`file[${index}][path]`, file.path);
+                formData.append(`file[${index}][name]`, file.originalname); // or any other file info
+            });
+            const response = await axios.put(`/api/notice/noticeupdate`, formData, {
+
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+
+
+            });
+
             alert("글 수정이 완료되었습니다.");
-            router.push(`/board/notice/${response.data.id}`);
+            await router.push(`/board/notice/${response.data.id}`);
         } catch (error) {
             console.error("Error submitting the form:", error);
             alert("글 수정에 실패했습니다.");
@@ -76,23 +102,21 @@ const EditNotice = () => {
 
 
 
+// 기존 첨부파일과 새 첨부파일을 구분하여 처리하는 로직
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>, index: number) => {
-        const newFile = event.target.files ? event.target.files[0] : null;
-        let updatedFileInputs = [...fileInputs];
-        updatedFileInputs[index] = { file: newFile };
-
-        // 마지막 입력 필드에 파일이 추가되면 새 입력 필드 추가
-        if (index === fileInputs.length - 1 && newFile) {
-            updatedFileInputs.push({ file: null });
+        const file = event.target.files ? event.target.files[0] : null;
+        if (file) {
+            // 새 파일이 선택된 경우, fileInputs 상태 업데이트
+            const updatedFileInputs = [...fileInputs];
+            updatedFileInputs[index] = { file, path: '' }; // 새 파일 정보 저장
+            setFileInputs(updatedFileInputs);
         }
-
-        setFileInputs(updatedFileInputs);
     };
 
-    const handleRemoveFile = (removeIndex: number) => {
-        setFileInputs(prevInputs =>
-            prevInputs.filter((_, index) => index !== removeIndex)
-        );
+    const handleRemoveFile = (index: number) => {
+        // 파일 삭제 처리 로직
+        const updatedFileInputs = fileInputs.filter((_, i) => i !== index);
+        setFileInputs(updatedFileInputs);
     };
 
 

@@ -55,7 +55,7 @@ const NoticeDetailPage = () => {
             window.alert('삭제되었습니다.');
 
             // 삭제 이후 목록으로 이동
-            router.push('/board/notice');
+            await router.push('/board/notice');
 
         } catch (error) {
             console.log('삭제실패', error);
@@ -97,17 +97,14 @@ const NoticeDetailPage = () => {
                                         {
                                             notice.boardfile && notice.boardfile.length > 0 ? (
                                                 notice.boardfile.map((file, index) => (
-
                                                     <span key={index}>
-                                                    <Link href={file.path} target="_blank" rel="noopener noreferrer" download>
-                                                        {file.path.split('/').pop()}
-                                                    </Link>
-                                                </span>
-
-                                            ))
-
+                                                        <Link href={file.path ?? '#'} target="_blank" rel="noopener noreferrer" download>
+                                                            {file.path ? file.path.split('/').pop() : '파일 정보 없음'}
+                                                        </Link>
+                                                    </span>
+                                                ))
                                             ) : (
-                                            <span>첨부파일이 없습니다.</span>
+                                                <span>첨부파일이 없습니다.</span>
                                             )
                                         }
                                     </div>

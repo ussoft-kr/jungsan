@@ -1,4 +1,4 @@
-// /api/notice/noticepost.ts
+// /api/notice/post.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 import multer from 'multer';
 import { createRouter } from 'next-connect';

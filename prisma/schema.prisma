@@ -34,3 +34,11 @@ model NoticeAttachment {
   fileName String
   Notice   Notice @relation(fields: [noticeId], references: [id])
 }
+
+model Technic {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String   @db.LongText
+  postedAt  DateTime @default(now())
+  boardfile Json?
+}
