@@ -364,6 +364,11 @@
 }
 
 .technicbox .infobox .infoheader {
+
+}
+
+.technicbox .infobox .infoheader a {
+    display: block;
     padding: 27px;
 }
 

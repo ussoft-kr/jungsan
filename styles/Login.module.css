@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.subwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginbox {
+    min-width: 100%;
+}
+
+.containerbox {
+    max-width: 100%;
+
+}
+
+.imgbox {
+    background: url('/sub/login.jpg') no-repeat;
+    height: 938px;
+    background-size: cover;
+    text-align: center;
+    padding: 350px 0;
+}
+
+.imgbox h2 {
+    font-size:50px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.infobox {
+    background: #f3f5f7;
+    height: 100%;
+    padding: 130px;
+}
+
+.formbox {
+    background: #fff;
+    padding: 50px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-height: 650px;
+    min-width: 700px;
+}
+
+.formbox h3 {
+
+    font-size: 38px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.formbox span {
+    font-size:18px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formbox input {
+    box-shadow: none !important;
+    border-radius: 0;
+    height: 50px;
+}
+
+.formbox .loginform {
+    margin-bottom: 20px;
+}
+
+.submitbox {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.submitbox button {
+    width:70%;
+    height: 60px;
+    background: var(--basic-personal-color) !important;
+    border:0;
+    font-size: 18px;
+}

@@ -10,6 +10,7 @@ import axios from "axios";
 import {useRouter} from "next/router";
 import Pagenation from "component/board/Pagenation";
 import {NoticeTypes} from "types/type";
+import {useSession} from "next-auth/react";
 
 
 
@@ -23,6 +24,8 @@ const NoticeIndex:NextPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10; // 한 페이지에 표시할 항목 수
     const totalPages = Math.ceil(totalNotices / itemsPerPage); // 총 페이지 수 계산
+
+    const { data: session } = useSession();
 
     useEffect(() => {
         fetchNotices();
@@ -121,9 +124,7 @@ const NoticeIndex:NextPage = () => {
                             <caption>전체 <span>{totalNotices}</span>건</caption>
                             <thead>
                             <tr>
-                                <th>
-
-                                </th>
+                                { session ?<th></th> : <></> }
                                 <th>No</th>
                                 <th>제목</th>
                                 <th>첨부파일</th>
@@ -133,6 +134,8 @@ const NoticeIndex:NextPage = () => {
                             <tbody>
                             {notices.map((item, index) => (
                                 <tr key={item.id}>
+                                    {session
+                                        ?
                                     <td className={styles.allcheck}>
                                         <Form.Check
                                             type={'checkbox'}
@@ -140,6 +143,9 @@ const NoticeIndex:NextPage = () => {
                                             onChange={(e) => handleCheck(item.id, e.target.checked)}
                                         />
                                     </td>
+                                        :
+                                        <></>
+                                    }
                                     <td className={styles.numtd}>
                                         {item.id}
                                     </td>
@@ -160,15 +166,23 @@ const NoticeIndex:NextPage = () => {
 
                         </table>
                     </div>
-                    <div className={styles.buttonbox}>
-                        <Button type={'button'} className={styles.writebtn}>
-                            <Link href={'/board/notice/write'}>
-                                글쓰기
-                            </Link>
-                        </Button>
-                        <Button type={'button'} onClick={handleDeleteChecked} className={styles.deletebtn}>선택삭제</Button>
-                    </div>
-                    <Pagenation currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+                    {session
+                        ?
+                        <div className={styles.buttonbox}>
+                            <Button type={'button'} className={styles.writebtn}>
+                                <Link href={'/board/notice/write'}>
+                                    글쓰기
+                                </Link>
+                            </Button>
+                            <Button type={'button'} onClick={handleDeleteChecked}
+                                    className={styles.deletebtn}>선택삭제</Button>
+                        </div>
+                        :
+
+                        <>
+                        </>
+                    }
+                    <Pagenation currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}/>
                 </Container>
             </div>
         </Layout>

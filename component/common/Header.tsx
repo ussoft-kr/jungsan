@@ -54,7 +54,7 @@ function Header() {
                             </Link>
                         </Nav.Item>
                         <Nav.Item className={styles.navitem}>
-                            <Link href={''} className={'nav-link'}>
+                            <Link href={'/inquiry'} className={'nav-link'}>
                                 문의하기
                             </Link>
                         </Nav.Item>

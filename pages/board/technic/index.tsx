@@ -10,6 +10,8 @@ import Link from "next/link";
 import Pagenation from "component/board/Pagenation";
 import axios from "axios";
 import {TechnicTypes} from "types/type";
+import {useSession} from "next-auth/react";
+
 
 const TechnicIndex:NextPage = () => {
     const router = useRouter();
@@ -19,6 +21,9 @@ const TechnicIndex:NextPage = () => {
     const itemsPerPage = 10; // 한 페이지에 표시할 항목 수
     const totalPages = Math.ceil(totalTechnics / itemsPerPage); // 총 페이지 수 계산
     const [checkedState, setCheckedState] = useState<{ [key: number]: boolean }>({});
+
+    const { data: session } = useSession();
+
     useEffect(() => {
         fetchTechnics();
     }, [router.query.search]);
@@ -117,14 +122,28 @@ const TechnicIndex:NextPage = () => {
                                 technics.map((item, index) => (
                                     <Col xl={4} xs={12} key={item.id}>
                                         <div className={styles.infobox}>
+                                            {session ?
                                             <Form.Check
                                                 type={'checkbox'}
                                                 checked={checkedState[item.id] || false}
                                                 onChange={(e) => handleCheck(item.id, e.target.checked)}
                                             />
+                                                : <></>
+                                            }
                                             <div className={styles.infoheader}>
-                                                <span className={styles.datespan}>{new Date(item.postedAt).toLocaleDateString()}</span>
-                                                <h4>{item.title}</h4>
+                                                {session ?
+                                                    <Link href={`/board/technic/${item.id}`}>
+                                                        <span
+                                                            className={styles.datespan}>{new Date(item.postedAt).toLocaleDateString()}</span>
+                                                        <h4>{item.title}</h4>
+                                                        </Link>
+                                                    :
+                                                    <>
+                                                    <span
+                                                        className={styles.datespan}>{new Date(item.postedAt).toLocaleDateString()}</span>
+                                                    <h4>{item.title}</h4>
+                                                    </>
+                                                }
                                             </div>
                                             {item.boardfile && (
                                                 <div className={styles.downloadbox}>
@@ -151,6 +170,7 @@ const TechnicIndex:NextPage = () => {
 
                         </Row>
                     </div>
+                    {session ?
                     <div className={styles.buttonbox}>
                         <Button type={'button'} className={styles.writebtn}>
                             <Link href={'/board/technic/write'}>
@@ -159,6 +179,9 @@ const TechnicIndex:NextPage = () => {
                         </Button>
                         <Button type={'button'} onClick={handleDeleteChecked} className={styles.deletebtn}>선택삭제</Button>
                     </div>
+                        :
+                        <></>
+                    }
                     <Pagenation currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}/>
                 </Container>
             </div>

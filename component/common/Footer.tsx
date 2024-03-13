@@ -1,8 +1,15 @@
 import styles from 'styles/Layout.module.css';
-import {Col, Container, Image, Row} from "react-bootstrap";
+import {Button, Col, Container, Image, Row} from "react-bootstrap";
+import {useRouter} from "next/router";
+import {signOut, useSession} from "next-auth/react";
 
 
 function Footer() {
+
+    const { data: session } = useSession();
+    const router = useRouter();
+
+
     return (
         <footer className={styles.footer}>
             <Container>
@@ -36,6 +43,13 @@ function Footer() {
                     <p>
                         COPYRIGHT ⓒ JUNGSAN ENTERPRISE CO,.LTD. ALL RIGHTS RESERVED
                     </p>
+                    {session
+                        ?
+                    <Button className={styles.logoutbtn} onClick={() => signOut()}>로그아웃</Button>
+                        :
+                    <>
+                    </>
+                    }
                 </div>
             </Container>
         </footer>

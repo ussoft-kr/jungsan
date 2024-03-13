@@ -71,7 +71,7 @@ const Main:NextPage = () => {
                                     <Image src={'main/main_business01.png'} alt={'main-img'}/>
                                     <div className={styles.absolutebox}>
                                         <div className={styles.morebox}>
-                                            <Link href={''}>
+                                            <Link href={'/business/ship'}>
                                                 <span className={styles.imgspan}>
                                                     <Image src={'main/more_detail01.svg'} alt={'main-img'}/>
                                                 </span>
@@ -92,7 +92,7 @@ const Main:NextPage = () => {
                                     <Image src={'main/main_business02.png'} alt={'main-img'}/>
                                 <div className={styles.absolutebox}>
                                     <div className={styles.morebox}>
-                                        <Link href={''}>
+                                        <Link href={'/business/plant'}>
                                                 <span className={styles.imgspan}>
                                                     <Image src={'main/more_detail01.svg'} alt={'main-img'}/>
                                                 </span>
@@ -113,7 +113,7 @@ const Main:NextPage = () => {
                                     <Image src={'main/main_business03.png'} alt={'main-img'}/>
                                     <div className={styles.absolutebox}>
                                         <div className={styles.morebox}>
-                                            <Link href={''}>
+                                            <Link href={'/business/industry'}>
                                                 <span className={styles.imgspan}>
                                                     <Image src={'main/more_detail01.svg'} alt={'main-img'}/>
                                                 </span>
@@ -134,7 +134,7 @@ const Main:NextPage = () => {
                                     <Image src={'main/main_business04.png'} alt={'main-img'}/>
                                     <div className={styles.absolutebox}>
                                         <div className={styles.morebox}>
-                                            <Link href={''}>
+                                            <Link href={'/business/electron'}>
                                                 <span className={styles.imgspan}>
                                                     <Image src={'main/more_detail01.svg'} alt={'main-img'}/>
                                                 </span>
@@ -185,7 +185,7 @@ const Main:NextPage = () => {
                                                     </Button>
                                                 </div>
                                                 <div className={styles.absolutebox}>
-                                                    <Link href={''}>
+                                                    <Link href={'/data/download/PLANT.pdf'} target="_blank" rel="noopener noreferrer" download>
                                                         <span className={styles.imgspan}>
                                                         <Image src={'main/download.svg'} alt={'main-icon'}/>
                                                         </span>
@@ -213,7 +213,8 @@ const Main:NextPage = () => {
                                                     </Button>
                                                 </div>
                                                 <div className={styles.absolutebox}>
-                                                    <Link href={''}>
+                                                    <Link href={'/data/download/ENGINE.pdf'} target="_blank"
+                                                          rel="noopener noreferrer" download>
                                                        <span className={styles.imgspan}>
                                                         <Image src={'main/download.svg'} alt={'main-icon'}/>
                                                         </span>
@@ -241,7 +242,8 @@ const Main:NextPage = () => {
                                                     </Button>
                                                 </div>
                                                 <div className={styles.absolutebox}>
-                                                    <Link href={''}>
+                                                    <Link href={'/data/download/LOCXELL_KOR.pdf'} target="_blank"
+                                                          rel="noopener noreferrer" download>
                                                        <span className={styles.imgspan}>
                                                         <Image src={'main/download.svg'} alt={'main-icon'}/>
                                                         </span>
@@ -403,7 +405,7 @@ const Main:NextPage = () => {
                                     <div className={styles.infoheader}>
                                         <h5>인증서</h5>
                                         <Button type={'button'} className={styles.morebtn}>
-                                            <Link href={''}>
+                                            <Link href={'/quality/certification'}>
                                                 <Image src={'main/more_detail_plus.svg'} alt={'main-img'} />
                                             </Link>
                                         </Button>
@@ -435,7 +437,7 @@ const Main:NextPage = () => {
                                     <div className={styles.infoheader}>
                                         <h5>확인서</h5>
                                         <Button type={'button'} className={styles.morebtn}>
-                                            <Link href={''}>
+                                            <Link href={'/quality/certification'}>
                                                 <Image src={'main/more_detail_plus.svg'} alt={'main-img'} />
                                             </Link>
                                         </Button>

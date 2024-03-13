@@ -15,6 +15,7 @@ datasource db {
 
 enum UserRole {
   ADMIN
+  SEMIADMIN
   USER
 }
 
@@ -41,4 +42,54 @@ model Technic {
   content   String   @db.LongText
   postedAt  DateTime @default(now())
   boardfile Json?
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  userid    String   @unique
+  name      String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  role      UserRole @default(USER)
+
+  account Account[]
+  session Session[]
+}
+
+model Account {
+  id                       String   @id @default(cuid())
+  type                     String
+  provider                 String
+  providerAccountId        String
+  userId                   Int
+  user                     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refresh_token            String?
+  refresh_token_expires_in Int?
+  access_token             String?
+  expires_in               Int?
+  expires_at               Int?
+  token_type               String?
+  scope                    String?
+  ip                       String?
+  createdAt                DateTime @default(now()) @map(name: "created_at")
+  updatedAt                DateTime @updatedAt @map(name: "updated_at")
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  expires      DateTime
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
 }

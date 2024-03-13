@@ -48,7 +48,7 @@ function SubHeader(props : SubHeaderProps) {
                                                 </Link>
                                             </dd>
                                             <dd>
-                                                <Link href={''}>
+                                                <Link href={'/inquiry'}>
                                                     문의하기
                                                 </Link>
                                             </dd>

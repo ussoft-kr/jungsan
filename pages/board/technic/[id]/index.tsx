@@ -21,7 +21,7 @@ const NoticeDetailPage = () => {
             const fetchNoticeDetail = async () => {
                 try {
                     const {data} = await axios.get(`/api/technic/${id}`);
-                    setNotice(data.notice); // 현재 게시물의 상태 업데이트
+                    setNotice(data.technic); // 현재 게시물의 상태 업데이트
                     // 이전글과 다음글의 상태도 업데이트
                     setPrevNotice(data.prevNotice);
                     setNextNotice(data.nextNotice);
@@ -34,7 +34,7 @@ const NoticeDetailPage = () => {
         }
     }, [id]);
 
-    if (!notice) return <p>Loading...</p>; // 로딩 중이거나 데이터가 없는 경우
+    if (!notice) return  // 로딩 중이거나 데이터가 없는 경우
 
     const handleDelete = async () => {
         const isConfirmed = window.confirm('정말 삭제하시겠습니까? 삭제된 데이터들은 복구가 불가능합니다.');

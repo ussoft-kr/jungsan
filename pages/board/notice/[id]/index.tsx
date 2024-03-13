@@ -34,7 +34,7 @@ const NoticeDetailPage = () => {
         }
     }, [id]);
 
-    if (!notice) return <p>Loading...</p>; // 로딩 중이거나 데이터가 없는 경우
+    if (!notice) return; // 로딩 중이거나 데이터가 없는 경우
 
     const handleDelete = async () => {
         const isConfirmed = window.confirm('정말 삭제하시겠습니까? 삭제된 데이터들은 복구가 불가능합니다.');

@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const numericId = Number(id);
         try {
             // 현재 공지사항 조회
-            const notice = await prisma.technic.findUnique({
+            const technic = await prisma.technic.findUnique({
                 where: { id: numericId },
             });
 
@@ -27,8 +27,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 orderBy: { id: 'asc' },
             });
 
-            if (notice) {
-                res.status(200).json({ notice, prevNotice, nextNotice });
+            if (technic) {
+                res.status(200).json({ technic, prevNotice, nextNotice });
             } else {
                 res.status(404).json({ message: "해당 공지사항을 찾을 수 없습니다." });
             }

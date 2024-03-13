@@ -1,3 +1,5 @@
+import 'next-auth';
+
 export type NoticeListData = {
     id : number;
     title : string;
@@ -106,4 +108,22 @@ export interface VideoPlayerProps {
 
 export interface BoardSearchProps {
     onSearch: (searchTrem : string) => void;
+}
+
+export interface InquiryFormType {
+    inquiryname: string;
+    inquiryemail: string;
+    phoneNumber: string;
+    inquirycontury: string;
+    inquirybusiness: string;
+    inquirycontent: string;
+}
+
+
+
+
+declare module 'next-auth' {
+    export interface Session {
+        role?: string;
+    }
 }

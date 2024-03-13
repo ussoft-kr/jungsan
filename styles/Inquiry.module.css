@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+.subwrap {
+    margin-top:90px;
+    margin-bottom: 70px;
+}
+
+.inquiryinfobox .imgspan img {
+    width:13px;
+    height: 13px;
+}
+
+.contentheader {
+    background: url('/sub/inquiry_img.jpg') no-repeat;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentheader h3 {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+}
+
+.contentheader h3 span {
+    font-weight: bold;
+    color: #fff;
+}
+
+.inquiryinfobox {
+    padding: 20px 0;
+    border-bottom:solid 1px #555;
+}
+
+.inquiryinfobox ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:25px;
+}
+
+.inquiryinfobox .imgspan {
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    background: var(--basic-personal-color);
+    text-align: center;
+    border-radius: 30px;
+    margin-right: 7px;
+}
+
+.inquiryinfobox .textspan {
+    font-size:15px;
+    color: #555;
+}
+
+.inquiryinfobox ul li {
+    display: flex;
+    align-items: center;
+
+}
+
+.inquiryinfobox ul li span {
+    display: inline-block;
+}
+
+.inquirybox {
+    margin-top:40px;
+}
+
+.inquirybox .formbox label {
+    font-size:17px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.inquirybox .formbox input[type=text] {
+    box-shadow: none !important;
+    border-radius: 0;
+    height: 60px;
+    font-size: 15px;
+    color: #969696;
+    border: solid 1px #c8c8c8;
+}
+
+.inquirybox .formbox textarea {
+    box-shadow: none !important;
+    border-radius: 0;
+    color: #969696;
+    resize: none;
+    min-height: 280px;
+    border: solid 1px #c8c8c8;
+}
+
+.filebox {
+    margin-top:40px;
+}
+
+.filebox label {
+    font-size:17px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.filebox input[type=file] {
+    border-radius: 0;
+    border: solid 1px #c8c8c8;
+    box-shadow: none !important;
+
+}
+
+.applybox {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:30px;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.applybox .checkbox input {
+    width:20px;
+    height: 20px;
+    box-shadow: none !important;
+    position: relative;
+    top:-2px;
+}
+
+.applybox .checkbox input:checked {
+    background-color: var(--basic-personal-color);
+    border-color: var(--basic-personal-color);
+    box-shadow: none !important;
+}
+
+.applybox .checkbox > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    gap:10px;
+}
+
+.submitbox {
+    text-align: center;
+    margin-top: 55px;
+}
+
+.submitbox button {
+    width:140px;
+    height: 50px;
+    padding: 0;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    background: var(--basic-personal-color) !important;
+    border:0 !important;
+    border-radius: 0;
+}
+
