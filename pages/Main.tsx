@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import NoticeLatest from "component/main/NoticeLatest";
 import VideoPlayer from "component/main/VideoPlayer";
+import ProductSlider from "../component/main/ProductSlider";
+import NewsLatest from "../component/main/NewsLatest";
 
 const Main:NextPage = () => {
     const settings = {
@@ -21,6 +23,7 @@ const Main:NextPage = () => {
         arrows: false,
         fade: true,
     };
+
     return (
         <div className={styles.mainwrap}>
             <div className={styles.mainslide}>
@@ -57,6 +60,7 @@ const Main:NextPage = () => {
                     </div>
                 </Slider>
             </div>
+            <NewsLatest />
             <div className={styles.section1}>
                 <Container>
                 <div className={styles.contentheader}>
@@ -283,112 +287,7 @@ const Main:NextPage = () => {
                     <h4>생산제품</h4>
                     <p>(주)중산기업의 생산제품을 소개합니다.</p>
                 </div>
-                <div className={styles.contentbody}>
-                    <Container fluid>
-                        <Row className={'row-cols-xl-6'}>
-                            <Col>
-                                <div className={styles.infobox}>
-                                    <Link href={''}>
-                                        <Image src={'main/main_product01.png'} alt={'main-img'} />
-                                        <div className={styles.absolutebox}>
-                                            <p>CONNECTING ROD STUD</p>
-                                            <span className={styles.iconspan}>
-                                                <Image src={'main/more_detail03.svg'} alt={'main-img'} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </Col>
-
-                            <Col>
-                                <div className={styles.infobox}>
-                                    <Link href={''}>
-                                        <Image src={'main/main_product02.png'} alt={'main-img'} />
-                                        <div className={styles.absolutebox}>
-                                            <p>MAIN BEARING STUD</p>
-                                            <span className={styles.iconspan}>
-                                                <Image src={'main/more_detail03.svg'} alt={'main-img'} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </Col>
-
-                            <Col>
-                                <div className={styles.infobox}>
-                                    <Link href={''}>
-                                        <Image src={'main/main_product03.png'} alt={'main-img'} />
-                                        <div className={styles.absolutebox}>
-                                            <p>
-                                                HEAVY HEX BOLT<br/>
-                                                (HEXAGON BOLT)<br/>
-                                                HEX NUT
-                                            </p>
-                                            <span className={styles.iconspan}>
-                                                <Image src={'main/more_detail03.svg'} alt={'main-img'} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </Col>
-
-                            <Col>
-                                <div className={styles.infobox}>
-                                    <Link href={''}>
-                                        <Image src={'main/main_product04.png'} alt={'main-img'} />
-                                        <div className={styles.absolutebox}>
-                                            <p>C12PT BOLT & NUT</p>
-                                            <span className={styles.iconspan}>
-                                                <Image src={'main/more_detail03.svg'} alt={'main-img'} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </Col>
-
-                            <Col>
-                                <div className={styles.infobox}>
-                                    <Link href={''}>
-                                        <Image src={'main/main_product05.png'} alt={'main-img'} />
-                                        <div className={styles.absolutebox}>
-                                            <p>HEADER PLUG</p>
-                                            <span className={styles.iconspan}>
-                                                <Image src={'main/more_detail03.svg'} alt={'main-img'} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </Col>
-
-                            <Col>
-                                <div className={styles.infobox}>
-                                    <Link href={''}>
-                                        <Image src={'main/main_product06.png'} alt={'main-img'} />
-                                        <div className={styles.absolutebox}>
-                                            <p>욕실폰 (JSB-101-A)</p>
-                                            <span className={styles.iconspan}>
-                                                <Image src={'main/more_detail03.svg'} alt={'main-img'} />
-                                            </span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </Col>
-
-                        </Row>
-                        <div className={styles.morebox}>
-                            <Button type={'button'} className={styles.morebtn}>
-                                <Link href={''}>
-                                    <span className={styles.textspan}>
-                                        MORE DETAIL
-                                    </span>
-                                    <span className={styles.imgspan}>
-                                        <Image src={'main/more_detail_plus.svg'} alt={'main-img'} />
-                                    </span>
-                                </Link>
-                            </Button>
-                        </div>
-                    </Container>
-                </div>
+                <ProductSlider />
             </div>
             <div className={styles.section4}>
                 <Container>

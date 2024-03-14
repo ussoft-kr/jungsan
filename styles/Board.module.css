@@ -42,6 +42,66 @@
     justify-content: center;
 }
 
+
+.boardwebzinebox table {
+    width:100%;
+
+    border-top:solid 1px #c8c8c8;
+}
+
+.boardwebzinebox table td {
+    padding: 37px 0;
+    border-bottom:solid 1px #c8c8c8;
+    vertical-align: middle;
+}
+
+.boardwebzinebox caption {
+    caption-side: top;
+}
+
+.boardwebzinebox caption span {
+    color: var(--basic-personal-color);
+}
+
+.boardwebzinebox .thumbnailtd img {
+    width:250px;
+    height: 150px;
+    aspect-ratio: 16/9;
+}
+
+.boardwebzinebox .thumbnailtd {
+    width:17%;
+}
+
+.boardwebzinebox .idspan {
+    display: block;
+    color: var(--basic-personal-color);
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.boardwebzinebox .titlestrong {
+    font-size:25px;
+    letter-spacing: -1px;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.boardwebzinebox .detailbox {
+    padding: 0 40px;
+}
+
+.boardwebzinebox .detailbox a {
+    display: block;
+}
+
+.boardwebzinebox .datespan {
+    color: #969696;
+    font-size: 17px;
+}
+
+
 .boardtablebox table {
     width:100%;
 }
@@ -236,7 +296,7 @@
 }
 
 .boardviewwrap .boardviewheader h1 {
-    font-size:40px;
+    font-size:30px;
     font-weight: bold;
     margin-bottom: 0;
 }
@@ -253,6 +313,10 @@
 .boardviewwrap .contentbox {
     border-bottom: solid 1px #c8c8c8;
     padding-bottom: 40px;
+}
+
+.boardviewwrap .contentbox img {
+
 }
 
 .boardviewwrap .buttonbox {
@@ -363,8 +427,21 @@
     border-radius: 10px;
 }
 
-.technicbox .infobox .infoheader {
+.technicbox .infobox .infoheaders {
+    padding: 27px;
+}
 
+.technicbox .infobox .infoheaders span {
+    color:#969696;
+    font-size:15px;
+}
+
+.technicbox .infobox .infoheaders h4 {
+    font-size:28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    margin-top:13px;
 }
 
 .technicbox .infobox .infoheader a {
@@ -383,6 +460,9 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     margin-top:13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .technicbox .infobox .downloadbox {

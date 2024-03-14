@@ -7,6 +7,7 @@ import styles from 'styles/Board.module.css';
 import {Button, Container} from "react-bootstrap";
 import Link from "next/link";
 import {NoticeTypes} from "types/type";
+import {useSession} from "next-auth/react";
 
 const NoticeDetailPage = () => {
     const router = useRouter();
@@ -15,6 +16,8 @@ const NoticeDetailPage = () => {
     const [prevNotice, setPrevNotice] = useState<NoticeTypes | null>(null);
     const [nextNotice, setNextNotice] = useState<NoticeTypes | null>(null);
     const [file, setFile] = useState<NoticeTypes | null>(null);
+
+    const { data: session } = useSession();
 
     useEffect(() => {
         if (id) {
@@ -69,12 +72,11 @@ const NoticeDetailPage = () => {
         <Layout>
             <SubHeader
                 imgsrc={'/sub/sub_img4.jpg'}
-                title={'공지사항'}
+                title={'회사소식'}
                 menuitem={[
-                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 1, menutitle: '회사소식', href: '/board/notice'},
                     {id: 2, menutitle: '기술자료', href: '/board/technic'},
                     {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
-                    {id: 4, menutitle: '회사소식', href: '/community/video'},
                 ]}
             />
             <div className={styles.boardviewwrap}>
@@ -136,6 +138,8 @@ const NoticeDetailPage = () => {
                         </table>
                     </div>
                     <div className={styles.buttonbox}>
+                        {session ?
+                            <>
                         <Button type={'button'}>
                             <Link href={'/board/notice'}>
                                 목록
@@ -147,6 +151,16 @@ const NoticeDetailPage = () => {
                             </Link>
                         </Button>
                         <Button type={'button'} onClick={handleDelete} className={'me-0'}>삭제</Button>
+                            </>
+                            :
+                            <>
+                                <Button type={'button'}>
+                                    <Link href={'/board/notice'}>
+                                        목록
+                                    </Link>
+                                </Button>
+                            </>
+                        }
                     </div>
                 </Container>
             </div>

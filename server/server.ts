@@ -22,10 +22,15 @@ const storage = multer.diskStorage({
         }
     },
     filename: function(req, file, cb) {
+        // 파일 확장자 추출
         const ext = path.extname(file.originalname);
-        const filename = path.basename(file.originalname, ext) + '-' + Date.now() + ext;
-        cb(null, filename);
+        // 고유 식별자 생성 (날짜와 시간을 기반)
+        const uniqueIdentifier = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        // 고유 식별자와 확장자를 조합하여 파일명 설정
+        cb(null, `${uniqueIdentifier}${ext}`);
     }
+
+
 });
 const upload = multer({ storage: storage });
 

@@ -11,6 +11,8 @@ import {useRouter} from "next/router";
 import Pagenation from "component/board/Pagenation";
 import {NoticeTypes} from "types/type";
 import {useSession} from "next-auth/react";
+import  { extractFirstImageUrl } from 'lib/thumbnail';
+
 
 
 
@@ -104,66 +106,52 @@ const NoticeIndex:NextPage = () => {
     };
 
 
+
     return (
         <Layout>
             <SubHeader
                 imgsrc={'/sub/sub_img4.jpg'}
-                title={'공지사항'}
+                title={'회사소식'}
                 menuitem={[
-                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 1, menutitle: '회사소식', href: '/board/notice'},
                     {id: 2, menutitle: '기술자료', href: '/board/technic'},
                     {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
-                    {id: 4, menutitle: '회사소식', href: '/community/video'},
                 ]}
             />
             <div className={styles.subwrap}>
                 <Container>
                     <BoardSearch onSearch={handleSearch} />
-                    <div className={styles.boardtablebox}>
+                    <div className={styles.boardwebzinebox}>
                         <table>
                             <caption>전체 <span>{totalNotices}</span>건</caption>
-                            <thead>
-                            <tr>
-                                { session ?<th></th> : <></> }
-                                <th>No</th>
-                                <th>제목</th>
-                                <th>첨부파일</th>
-                                <th>작성일</th>
-                            </tr>
-                            </thead>
                             <tbody>
                             {notices.map((item, index) => (
-                                <tr key={item.id}>
-                                    {session
-                                        ?
-                                    <td className={styles.allcheck}>
-                                        <Form.Check
-                                            type={'checkbox'}
-                                            checked={checkedState[item.id] || false}
-                                            onChange={(e) => handleCheck(item.id, e.target.checked)}
-                                        />
-                                    </td>
-                                        :
-                                        <></>
-                                    }
-                                    <td className={styles.numtd}>
-                                        {item.id}
-                                    </td>
-                                    <td className={styles.titletd}>
-                                        <Link href={`/board/notice/${item.id}`}>
-                                            {item.title}
-                                        </Link>
-                                    </td>
-                                    <td className={styles.atttd}>
-                                        {item.boardfile && item.boardfile.length > 0 ? <Image src={'/sub/file.svg'} alt={'sub-icon'} /> : 'X'}
-                                    </td>
-                                    <td className={styles.datetd}>
-                                        {new Date(item.postedAt).toLocaleDateString()}
-                                    </td>
-                                </tr>
+                            <tr key={index}>
+                                {session ?
+                                <td className={styles.checktd}>
+                                    <Form.Check
+                                        type={'checkbox'}
+                                        checked={checkedState[item.id] || false}
+                                        onChange={(e) => handleCheck(item.id, e.target.checked)}
+                                    />
+                                </td>
+                                    : <></>
+                                }
+                                <td className={styles.thumbnailtd}>
+                                    <Image src={extractFirstImageUrl(item.content) || '/sub/logo_no-thumbnail.jpg'} alt="Thumbnail" />
+                                </td>
+                                <td className={styles.infotd}>
+                                        <div className={styles.detailbox}>
+                                            <Link href={`/board/notice/${item.id}`}>
+                                                <span className={styles.idspan}>No.{item.id}</span>
+                                                <strong className={styles.titlestrong}>{item.title}</strong>
+                                                <span className={styles.datespan}>{new Date(item.postedAt).toLocaleDateString()}</span>
+                                            </Link>
+                                        </div>
+                                </td>
+                            </tr>
                             ))}
                             </tbody>
-
                         </table>
                     </div>
                     {session

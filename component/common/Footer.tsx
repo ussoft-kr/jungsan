@@ -2,6 +2,7 @@ import styles from 'styles/Layout.module.css';
 import {Button, Col, Container, Image, Row} from "react-bootstrap";
 import {useRouter} from "next/router";
 import {signOut, useSession} from "next-auth/react";
+import TopButton from "../topbutton/TopButton";
 
 
 function Footer() {
@@ -52,6 +53,7 @@ function Footer() {
                     }
                 </div>
             </Container>
+            <TopButton />
         </footer>
     )
 }

@@ -92,12 +92,11 @@ const NoticeWrite:NextPage = () => {
         <Layout>
             <SubHeader
                 imgsrc={'/sub/sub_img4.jpg'}
-                title={'공지사항'}
+                title={'회사소식'}
                 menuitem={[
-                    {id: 1, menutitle: '공지사항', href: '/board/notice'},
+                    {id: 1, menutitle: '회사소식', href: '/board/notice'},
                     {id: 2, menutitle: '기술자료', href: '/board/technic'},
                     {id: 3, menutitle: '카탈로그', href: '/community/catalog'},
-                    {id: 4, menutitle: '회사소식', href: '/community/video'},
                 ]}
             />
             <div className={styles.writewrap}>

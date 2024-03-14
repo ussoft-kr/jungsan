@@ -39,6 +39,8 @@ export interface NoticeTypes {
     content: string;
     boardfile:FileInfoTypes[];
     postedAt: Date;
+    thumbnail? : string;
+    text? :string;
 }
 
 

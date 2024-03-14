@@ -322,14 +322,21 @@
     margin-bottom:0;
 }
 
+.section3 .slideitembox {
+    padding: 0 15px;
+}
+
 .section3 img {
     width:100%;
 }
 
+
+
 .section3 .iconspan img {
     width:5px !important;
     height: 8px;
-    margin-top:-3px;
+    margin-left: 10px;
+    margin-top:8px;
 }
 
 .section3 .morebox img {
@@ -584,6 +591,70 @@
     position: relative;
     z-index: 2;
 }
+
+
+.newslatestwrap {
+    margin-top:110px;
+}
+
+
+.newslatestwrap .contentheader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.newslatestwrap .contentheader h4 {
+    font-size:36px;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 20px;
+}
+
+.newslatestwrap .contentheader p {
+    font-size:var(--font-size-15);
+    margin-bottom:0;
+}
+
+.newslatestwrap table {
+    width:100%;
+    border-top:solid 1px #c8c8c8;
+    table-layout: fixed;
+}
+
+.newslatestwrap table tbody td img {
+    width:245px;
+    height: 120px;
+}
+
+.newslatestwrap table tbody td {
+    padding: 20px 0;
+    border-bottom: solid 1px #c8c8c8;
+    vertical-align: middle;
+}
+
+.newslatestwrap table tbody td .infobox  {
+    padding: 0 20px;
+}
+
+.newslatestwrap table tbody td .infobox a {
+    display: block;
+
+}
+
+.newslatestwrap table tbody td .infobox strong {
+    display: block;
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 30px;
+
+}
+
+.newslatestwrap .thumbnailtd {
+    width:40%;
+}
+
+
 
 @media (max-width: 1920px) {
     .section4 {
