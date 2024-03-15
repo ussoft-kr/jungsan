@@ -55,6 +55,8 @@ nextApp.prepare().then(() => {
         res.json({ location: `/data/file/${file.filename}` });
     });
 
+
+
     // 정적 파일 라우트
     server.use('/data/board', express.static(path.join('public/data/board')));
     server.use('/data/file', express.static(path.join('public/data/file'))); // 새로운 정적 파일 경로 추가
