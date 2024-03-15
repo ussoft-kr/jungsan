@@ -21,11 +21,11 @@ function NewsLatest() {
             }
         };
 
-        fetchLatestNotices().then(r => '');
+        fetchLatestNotices().then();
     }, []);
 
 
-    const cols = [0,1];
+
 
     return (
         <div className={styles.newslatestwrap}>
@@ -38,13 +38,37 @@ function NewsLatest() {
                     </span>
                 </div>
                 <div className={styles.contentbody}>
-                    <Row>
-                        {cols.map(colIndex => (
-                            <Col xl={6} xs={12} key={colIndex}>
+                    <Row className={'align-items-center'}>
+                        <Row>
+                            <Col xl={6} xs={12} className={styles.leftcol}>
                                 <div className={styles.latesttable}>
                                     <table>
                                         <tbody>
-                                        {notices.slice(colIndex * 3, (colIndex + 1) * 3).map((item, index) => (
+                                        {notices.slice(0, 1).map((item, index) => (
+                                            <tr key={index}>
+                                                <td className={styles.infotd}>
+                                                    <Link href={`/board/notice/${item.id}`}>
+                                                    <div className={styles.thumbnailtd}>
+                                                        <Image src={item.thumbnail || '/sub/logo_no-thumbnail.jpg'} alt="Thumbnail" />
+                                                    </div>
+                                                    <div className={styles.infobox}>
+                                                            <strong>{item.title}</strong>
+                                                            <p></p>
+                                                            <span>{new Date(item.postedAt).toLocaleDateString()}</span>
+                                                    </div>
+                                                </Link>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </Col>
+                            <Col xl={6} xs={12} className={styles.rightcol}>
+                                <div className={styles.latesttable}>
+                                    <table>
+                                        <tbody>
+                                        {notices.slice(1, 4).map((item, index) => (
                                             <tr key={index}>
                                                 <td className={styles.thumbnailtd}>
                                                     <Image src={item.thumbnail || '/sub/logo_no-thumbnail.jpg'} alt="Thumbnail" />
@@ -53,6 +77,7 @@ function NewsLatest() {
                                                     <div className={styles.infobox}>
                                                         <Link href={`/board/notice/${item.id}`}>
                                                             <strong>{item.title}</strong>
+                                                            <p></p>
                                                             <span>{new Date(item.postedAt).toLocaleDateString()}</span>
                                                         </Link>
                                                     </div>
@@ -63,7 +88,8 @@ function NewsLatest() {
                                     </table>
                                 </div>
                             </Col>
-                        ))}
+                        </Row>
+
                     </Row>
                 </div>
             </Container>

@@ -29,11 +29,11 @@ const Catalog:NextPage = () => {
                             <Col xl={4} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.infoheader}>
-                                        <p>플랜트</p>
+                                        <p>플랜트 & 엔진</p>
                                         <Image src={'/sub/catalog01.jpg'} alt={'sub-img'}/>
                                     </div>
                                     <div className={styles.downloadbox}>
-                                        <Link href={'/data/download/PLANT.pdf'} target="_blank" rel="noopener noreferrer" download>
+                                        <Link href={'/data/download/jungsan ca_kr web out.pdf'} target="_blank" rel="noopener noreferrer" download>
                                             <span className={styles.textspan}>다운로드</span>
                                             <span className={styles.imgspan}>
                                               <Image src={'/main/download.svg'} alt={'sub-icon'} />
@@ -41,23 +41,6 @@ const Catalog:NextPage = () => {
                                         </Link>
                                     </div>
                                 </div>
-                            </Col>
-                            <Col xl={4} xs={12}>
-                                <div className={styles.infobox}>
-                                    <div className={styles.infoheader}>
-                                        <p>엔진</p>
-                                        <Image src={'/sub/catalog02.jpg'} alt={'sub-img'}/>
-                                    </div>
-                                        <div className={styles.downloadbox}>
-                                            <Link href={'/data/download/ENGINE.pdf'} target="_blank"
-                                                  rel="noopener noreferrer" download>
-                                                <span className={styles.textspan}>다운로드</span>
-                                                <span className={styles.imgspan}>
-                                              <Image src={'/main/download.svg'} alt={'sub-icon'}/>
-                                            </span>
-                                            </Link>
-                                        </div>
-                                    </div>
                             </Col>
                             <Col xl={4} xs={12}>
                                 <div className={styles.infobox}>

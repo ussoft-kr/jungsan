@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "styles/Main.module.css";
-import {Button, Col, Container, Image, Row} from "react-bootstrap";
+import {Button,  Container, Image} from "react-bootstrap";
 import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -17,7 +17,7 @@ function ProductSlider() {
         autoplay: true,
         autoplaySpeed: 100,
         arrows: false,
-        margin : 10,
+        margin: 10,
         fade: false, // fade 옵션을 false로 설정하거나 제거
     };
 
@@ -107,7 +107,7 @@ function ProductSlider() {
                                     <p>욕실폰 (JSB-101-A)</p>
                                     <span className={styles.iconspan}>
                                                 <Image src={'main/more_detail03.svg'} alt={'main-img'}/>
-                                            </span>
+                                    </span>
                                 </div>
                             </Link>
                         </div>
@@ -116,13 +116,13 @@ function ProductSlider() {
 
                 <div className={styles.morebox}>
                     <Button type={'button'} className={styles.morebtn}>
-                        <Link href={''}>
-                                    <span className={styles.textspan}>
-                                        MORE DETAIL
-                                    </span>
+                        <Link href={'/business/product'}>
+                            <span className={styles.textspan}>
+                                MORE DETAIL
+                            </span>
                             <span className={styles.imgspan}>
-                                        <Image src={'main/more_detail_plus.svg'} alt={'main-img'}/>
-                                    </span>
+                                <Image src={'main/more_detail_plus.svg'} alt={'main-img'}/>
+                            </span>
                         </Link>
                     </Button>
                 </div>

@@ -36,18 +36,30 @@ const Inquiry:NextPage = () => {
         setPhoneNumber(formattedPhoneNumber);
     };
 
-    const handleAgreementChange =  (e : ChangeEvent<HTMLInputElement>) => setIsAgreed(e.target.checked);
-
 
     // 파일 선택 이벤트 핸들러
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files ? e.target.files[0] : null; // 사용자가 선택한 첫 번째 파일
+
+        if (file) {
+            if (file.size > 10 * 1024 * 1024) {
+                alert('파일 용량이 너무 큽니다. 최대 10MB까지 가능합니다.');
+                e.target.value = '';
+                return;
+            }
+        }
+
         setSelectedFile(file);
     };
 
     const handleSubmit = async (e : ChangeEvent<HTMLFormElement>) => {
 
         e.preventDefault();
+
+        if (!isAgreed) {
+            alert('개인정보 수집 및 이용에 동의하셔야 합니다.');
+            return;
+        }
 
         const formData = new FormData();
 
@@ -57,27 +69,26 @@ const Inquiry:NextPage = () => {
         formData.append('inquirycontury',inquirycontury);
         formData.append('inquirybusiness', inquirybusiness);
         formData.append('inquirycontent', inquirycontent);
+        formData.append('inquirystats', '이 문의는 문의하기 페이지에서 작성되었습니다.');
         if (selectedFile) {
             formData.append('file', selectedFile);
         }
         try {
-            await axios.post('/api/sendEmail', formData, {
+            await axios.post('/api/inquiry/post', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
             alert('문의하기가 접수되었습니다.');
+            window.location.reload();
         } catch (error) {
             alert('문의하기가 실패하였습니다.')
         }
 
 
-
-        if (!isAgreed) {
-            alert('개인정보 수집 및 이용에 동의하셔야 합니다.');
-            return;
-        }
     }
+
+    const handleAgreementChange =  (e : ChangeEvent<HTMLInputElement>) => setIsAgreed(e.target.checked);
 
     return (
         <Layout>

@@ -115,10 +115,11 @@ export interface BoardSearchProps {
 export interface InquiryFormType {
     inquiryname: string;
     inquiryemail: string;
-    phoneNumber: string;
+    phoneNumber?: string;
     inquirycontury: string;
-    inquirybusiness: string;
+    inquirybusiness?: string;
     inquirycontent: string;
+    inquirystats? : string;
 }
 
 

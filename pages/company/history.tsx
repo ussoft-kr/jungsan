@@ -319,8 +319,9 @@ const History:NextPage = () => {
                                             </div>
                                             <div className={styles.txtbox}>
                                                 <ul>
-                                                    <li>· DNV.GL 열처리 공장 승인</li>
-                                                    <li>· DNV.GL ISO/TS 29001 인증</li>
+                                                    <li>· ABS 열처리 공장 승인</li>
+                                                    <li>· DNV 열처리 공장 승인</li>
+                                                    <li>· DNV ISO/TS 29001 인증</li>
                                                     <li>· 삼성중공업 Inner Hole Nut 승인</li>
                                                     <li>· KC LNG TECH 인증(KC1-M-2017-0101)</li>
                                                     <li>· JSRS 인증</li>

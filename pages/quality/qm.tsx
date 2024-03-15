@@ -43,12 +43,12 @@ const Qm:NextPage = () => {
                                     <Image src={'/sub/qa_icon2.svg'} alt={'sub-img'}/>
                                 </div>
                                 <div className={styles.titlebox}>
-                                    <h5>품질경영 메뉴얼</h5>
+                                    <h5>품질경영 매뉴얼</h5>
                                 </div>
                                 <div className={styles.textbox}>
                                     <div className={styles.boxs}>
                                         <strong>문서번호</strong>
-                                        <span>JSTQP-300</span>
+                                        <span>JSTQM-100</span>
                                     </div>
                                     <div className={styles.boxs}>
                                         <strong>재정일자</strong>

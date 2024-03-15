@@ -134,7 +134,7 @@
 .section2 {
     margin-top:95px;
     background: #f8f8f8;
-    padding: 120px 0 70px 0;
+    padding: 70px 0;
 }
 
 .section2 .titlebox h3 {
@@ -143,6 +143,7 @@
     font-weight: bold;
     letter-spacing: var(--letter-spacing-medium);
     line-height: 50px;
+    padding-left: 100px;
 }
 
 .section2 .imgbox {
@@ -411,7 +412,6 @@
 }
 
 .section4 {
-    margin-top:135px;
     background: url('/main/bg_certification.jpg') no-repeat center;
     background-size: cover;
     height: 761px;
@@ -558,6 +558,7 @@
 .section5 .applybox label {
     font-size:14px;
     font-weight: 500;
+    margin-right: 30px;
 }
 
 .section5 .applybox button {
@@ -616,7 +617,7 @@
 
 .newslatestwrap table {
     width:100%;
-    border-top:solid 1px #c8c8c8;
+
     table-layout: fixed;
 }
 
@@ -643,17 +644,48 @@
 .newslatestwrap table tbody td .infobox strong {
     display: block;
     font-size: 22px;
+}
+
+.newslatestwrap .rightcol table tbody td .infobox strong {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-bottom: 30px;
-
 }
 
+.newslatestwrap .leftcol table tbody td .infobox strong {
+    word-break: keep-all;
+}
 .newslatestwrap .thumbnailtd {
     width:40%;
 }
 
+.newslatestwrap .leftcol {
+    align-self: center;
+}
+
+.newslatestwrap .rightcol {
+
+}
+
+.newslatestwrap .leftcol .latesttable table {
+    border-top:0;
+}
+
+.newslatestwrap .leftcol .latesttable table tbody td {
+    border-bottom: 0;
+}
+.newslatestwrap .leftcol .thumbnailtd img {
+    width:80%;
+    height: 80%;
+    aspect-ratio: 16 / 9;
+}
+
+.newslatestwrap .leftcol .thumbnailtd {
+    text-align: center;
+    width:100%;
+    margin-bottom: 30px;
+}
 
 
 @media (max-width: 1920px) {

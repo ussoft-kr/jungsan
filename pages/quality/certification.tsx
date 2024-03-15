@@ -30,25 +30,25 @@ const Certification:NextPage = () => {
                                 <div className={styles.imgbox}>
                                     <Image src={'/sub/certification01.jpg'} alt={'sub-img'}/>
                                 </div>
-                                <p>ISO 9001 (DNV.GL)</p>
+                                <p>ISO 9001 (DNV)</p>
                             </Col>
                             <Col xl={3} xs={12}>
                                 <div className={styles.imgbox}>
                                     <Image src={'/sub/certification02.jpg'} alt={'sub-img'}/>
                                 </div>
-                                <p>ISO 14001 (DNV.GL)</p>
+                                <p>ISO 14001 (DNV)</p>
                             </Col>
                             <Col xl={3} xs={12}>
                                 <div className={styles.imgbox}>
                                     <Image src={'/sub/certification03.jpg'} alt={'sub-img'}/>
                                 </div>
-                                <p>ISO 45001 (DNV.GL)</p>
+                                <p>ISO 45001 (DNV)</p>
                             </Col>
                             <Col xl={3} xs={12}>
                                 <div className={styles.imgbox}>
                                     <Image src={'/sub/certification04.jpg'} alt={'sub-img'}/>
                                 </div>
-                                <p>ISO/TS 29001 (DNV.GL)</p>
+                                <p>ISO/TS 29001 (DNV)</p>
                             </Col>
                             <Col xl={3} xs={12}>
                                 <div className={styles.imgbox}>

@@ -9,7 +9,7 @@ function VideoPlayer(props : VideoPlayerProps) {
     const [isPlaying, setIsPlaying] = useState(false);
 
     const thumbnailsrc = `${props.thumsrc}`
-    const src = `https://www.youtube.com/embed/${props.videoid}`
+    const src = `${props.videoid}`
 
     const playVideo = () => {
         setIsPlaying(true);

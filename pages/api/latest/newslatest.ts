@@ -10,9 +10,9 @@ export default async function handler(req: NextApiRequest, res : NextApiResponse
         try {
             const latestNotices = await prisma.notice.findMany({
                 orderBy: {
-                    postedAt: 'asc', // 최신순으로 정렬
+                    postedAt: 'desc', // 최신순으로 정렬
                 },
-                take : 6,
+                take : 4,
                 select: {
                     id: true,
                     title: true,

@@ -199,22 +199,22 @@ const Overview:NextPage = () => {
                             <Row className={'gy-4'}>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
-                                        <p>ISO9001 (DNV.GL인증)</p>
+                                        <p>ISO9001 (DNV인증)</p>
                                     </div>
                                 </Col>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
-                                        <p>ISO14001 (DNV.GL인증)</p>
+                                        <p>ISO14001 (DNV인증)</p>
                                     </div>
                                 </Col>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
-                                        <p>ISO45001 (DNV.GL인증)</p>
+                                        <p>ISO45001 (DNV인증)</p>
                                     </div>
                                 </Col>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
-                                        <p>ISO/TS29001 (DNV.GL인증)</p>
+                                        <p>ISO/TS29001 (DNV인증)</p>
                                     </div>
                                 </Col>
                                 <Col xl={3} xs={12}>
