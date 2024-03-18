@@ -18,7 +18,7 @@ export default async function handler(
         try {
             const response = await axios.get(oEmbedUrl);
             const thumbnailUrl = response.data.thumbnail_url;
-            console.log(`Vimeo thumbnail URL: ${thumbnailUrl}`);
+
             res.status(200).json({ thumbnailUrl });
         } catch (error) {
             console.error(error);

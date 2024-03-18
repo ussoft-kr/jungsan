@@ -18,11 +18,11 @@ function Test() {
             return '';
         }
     }
-
+    https://player.vimeo.com/video/922803466
     useEffect(() => {
         async function loadThumbnail() {
             // 비메오 영상 URL을 고정값으로 설정합니다.
-            const fixedVideoUrl = "https://vimeo.com/922803402?h=008b8eab25";
+            const fixedVideoUrl = "https://vimeo.com/922803466";
             // fetchVimeoThumbnail 함수를 호출하여 썸네일 URL을 가져옵니다.
             const url = await fetchVimeoThumbnail(fixedVideoUrl);
             // 상태에 썸네일 URL을 저장합니다.

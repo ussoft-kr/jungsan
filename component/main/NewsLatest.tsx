@@ -9,20 +9,59 @@ import Link from "next/link";
 function NewsLatest() {
 
     const [notices, setNotices] = useState<NoticeTypes[]>([]);
+    const [thumbnailUrl, setThumbnailUrl] = useState('');
+
+
+    async function fetchVimeoThumbnail(videoUrl: string): Promise<string> {
+        try {
+            // API 엔드포인트로 요청을 보냅니다. videoUrl을 쿼리 파라미터로 포함시킵니다.
+            const response = await axios.get(`/api/vimeo/thumbnail?url=${encodeURIComponent(videoUrl)}`);
+            // 응답에서 썸네일 URL을 추출합니다.
+            const thumbnailUrl = response.data.thumbnailUrl;
+            return thumbnailUrl;
+        } catch (error) {
+            console.error('Error fetching Vimeo thumbnail:', error);
+            return '';
+        }
+    }
+
 
 
     useEffect(() => {
         const fetchLatestNotices = async () => {
             try {
                 const response = await axios.get('/api/latest/newslatest');
-                setNotices(response.data.notices);
+                const fetchedNotices = response.data.notices;
+
+                const noticesWithThumbnailPromises = fetchedNotices.map(async (notice : NoticeTypes) => {
+                    if (notice.text) {
+                        try {
+                            const thumbnailUrl = await fetchVimeoThumbnail(notice.text);
+                            return { ...notice, thumbnail: thumbnailUrl };
+                        } catch (error) {
+                            console.error('Thumbnail fetch error:', error);
+                            return { ...notice, thumbnail: '' }; // 실패 시 기본 썸네일 또는 빈 문자열 설정
+                        }
+                    } else {
+                        return notice;
+                    }
+                });
+
+                const noticesWithThumbnailsResults = await Promise.allSettled(noticesWithThumbnailPromises);
+                const noticesWithThumbnails = noticesWithThumbnailsResults.map(result => result.status === 'fulfilled' ? result.value : null).filter(notice => notice !== null);
+
+                setNotices(noticesWithThumbnails);
             } catch (error) {
-                console.error('최신글 불러오기 실패', error);
+                console.error('Failed to fetch latest notices:', error);
             }
         };
 
-        fetchLatestNotices().then();
+        fetchLatestNotices();
     }, []);
+
+
+
+
 
 
 
@@ -71,7 +110,7 @@ function NewsLatest() {
                                         {notices.slice(1, 4).map((item, index) => (
                                             <tr key={index}>
                                                 <td className={styles.thumbnailtd}>
-                                                    <Image src={item.thumbnail || '/sub/logo_no-thumbnail.jpg'} alt="Thumbnail" />
+                                                    <Image src={item.thumbnail || item.text || '/sub/logo_no-thumbnail.jpg'} alt="Thumbnail" />
                                                 </td>
                                                 <td className={styles.infotd}>
                                                     <div className={styles.infobox}>

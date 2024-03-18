@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 import {extractFirstImageUrl} from "lib/thumbnail";
-import { extractText } from "lib/extracttext";
+import { extractVimeoUrl } from "lib/extracttext";
 
 const prisma = new PrismaClient();
 
@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res : NextApiResponse
             const noticesWithThumbnailsAndText = latestNotices.map(notice => ({
                 ...notice,
                 thumbnail: extractFirstImageUrl(notice.content),
-                text: extractText(notice.content), // 텍스트 추출 로직 적용
+                text: extractVimeoUrl(notice.content), // 텍스트 추출 로직 적용
             }));
 
             res.status(200).json({ notices: noticesWithThumbnailsAndText });
