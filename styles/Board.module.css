@@ -63,6 +63,10 @@
     color: var(--basic-personal-color);
 }
 
+.boardwebzinebox .thumbnailtd {
+    position: relative;
+}
+
 .boardwebzinebox .thumbnailtd img {
     width:250px;
     height: 150px;
@@ -489,4 +493,121 @@
 .technicbox .infobox .downloadbox a span.imgspan {
     position: relative;
     top:-1px;
+}
+
+.checkdelete {
+    position: absolute;
+    z-index: 4;
+}
+
+.checkdelete input {
+    box-shadow: none !important;
+    width:20px;
+    height: 20px;
+    border-radius: 0 !important;
+    margin-top: 0;
+}
+
+
+@media (max-width: 1399px) {
+    .boardwebzinebox .titlestrong {
+        font-size:20px;
+    }
+    .boardviewwrap .contentbox img {
+        width:100%;
+    }
+}
+
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 100%;
+    }
+    .boardwebzinebox table {
+        table-layout: fixed;
+    }
+    .boardwebzinebox .thumbnailtd img {
+        width:100%;
+    }
+    .boardwebzinebox .thumbnailtd {
+        width:30%;
+    }
+
+    .boardviewwrap .contentbox p a {
+        word-break: break-word;
+    }
+    .prevnextbox th {
+        width:23%;
+    }
+    .prevnextbox table {
+        table-layout: fixed;
+    }
+    .checktd {
+        width:2%;
+    }
+}
+
+@media (max-width: 1079px) {
+    .boardwebzinebox .titlestrong {
+        width:95%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 659px) {
+    .boardviewwrap .boardviewheader {
+        display: block;
+    }
+    .boardviewwrap .boardviewheader h1 {
+        margin-bottom: 20px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .searchbox input {
+        max-width: 100%;
+        width:100% !important;
+        margin-top: 30px;
+    }
+    .searchbox select {
+        max-width: 100%;
+        width:100% !important;
+    }
+    .searchbox .groupbox {
+        display: block;
+    }
+    .searchbox button {
+        right:0;
+        position: absolute !important;
+        margin-top: -43px;
+    }
+    .boardwebzinebox .detailbox {
+        padding: 0 15px;
+    }
+
+    .boardwebzinebox .thumbnailtd {
+        width:40%;
+    }
+    .prevnextbox th {
+        font-size: 13px;
+    }
+    .prevnextbox td {
+        font-size: 13px;
+    }
+
+    .prevnextbox td a {
+        font-size: 13px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 457px) {
+    .boardviewwrap .buttonbox button {
+        width:95px;
+    }
 }

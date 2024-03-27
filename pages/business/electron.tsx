@@ -21,7 +21,7 @@ const Electron:NextPage = () => {
             />
             <div className={styles.subwrap}>
                 <div className={styles.contentheader}>
-                    <Container>
+                    <Container className={styles.container}>
                         <h3>
                             <strong>주방 TV, 욕실폰</strong> 전자제품 사업
                         </h3>
@@ -75,7 +75,7 @@ const Electron:NextPage = () => {
                     </Container>
                 </div>
                 <div className={styles.contentbody}>
-                    <Container>
+                    <Container className={styles.container}>
                         <Row>
                             <Col xl={2} xs={12}>
                                 <div className={styles.titlebox}>

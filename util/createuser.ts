@@ -22,6 +22,7 @@ async function createUser(userid: string, name: string, plainPassword: string, r
 
 // 사용자 생성 예시 호출
 // 사용자 ID, 사용자 이름, 평문 비밀번호, 역할을 인자로 전달
+// 실행시 터미널에서 node --loader ts-node/esm createuser.ts 로 실행, id,이름,비밀번호,role은 넣어야 함
 createUser('jungsan', '관리자', '4290@@', 'SEMIADMIN')
     .catch((e) => console.error(e))
     .finally(async () => {

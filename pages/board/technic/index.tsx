@@ -112,20 +112,21 @@ const TechnicIndex:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <BoardSearch onSearch={handleSearch}/>
                     <div className={styles.technicbox}>
                         <p>전체 <span>{totalTechnics}</span>건</p>
                         <Row>
                             {technics.length > 0 ? (
                                 technics.map((item, index) => (
-                                    <Col xl={4} xs={12} key={item.id}>
+                                    <Col xl={4}  sm={6} xs={12} key={item.id}>
                                         <div className={styles.infobox}>
                                             {session ?
                                             <Form.Check
                                                 type={'checkbox'}
                                                 checked={checkedState[item.id] || false}
                                                 onChange={(e) => handleCheck(item.id, e.target.checked)}
+                                                className={styles.checkdelete}
                                             />
                                                 : <></>
                                             }

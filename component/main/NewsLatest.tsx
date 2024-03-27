@@ -77,8 +77,7 @@ function NewsLatest() {
                     </span>
                 </div>
                 <div className={styles.contentbody}>
-                    <Row className={'align-items-center'}>
-                        <Row>
+                    <Row className={styles.newsrow}>
                             <Col xl={6} xs={12} className={styles.leftcol}>
                                 <div className={styles.latesttable}>
                                     <table>
@@ -127,8 +126,6 @@ function NewsLatest() {
                                     </table>
                                 </div>
                             </Col>
-                        </Row>
-
                     </Row>
                 </div>
             </Container>

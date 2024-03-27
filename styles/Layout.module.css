@@ -363,3 +363,133 @@
     font-weight: bold;
     border-radius: 0;
 }
+
+.mobileheaderbox {
+    display: none;
+}
+
+.mobileoffcanvasbox .togglebtn {
+    background: none !important;
+    border:0 !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin-top:-13px;
+}
+
+.mobileoffcanvasbox .togglebtn img {
+    width:21px;
+    height: 16px;
+}
+
+.mobilemenubox .mobileacc .mobileaccitem .mobileoffcanvasheader {
+
+}
+
+.mobilemenubox .mobileacc .mobileaccitem .mobileaccbody {
+
+}
+
+.mobilemenubox .mobileacc .mobileaccitem {
+    border:0;
+    border-bottom: solid 1px #c8c8c8;
+    border-radius: 0;
+}
+
+.mobileoffcanvasbody {
+    padding: 30px 0;
+}
+
+.mobileoffcanvasbody dl {
+    margin-bottom: 0;
+}
+
+.mobileoffcanvasbody dl dd a {
+    font-size: 15px;
+    display: block;
+}
+
+.mobileacc .mobileaccbody {
+    background-color: #ececec;
+}
+
+.mobilemenubox .mobileacc .mobileaccitem h2 button:not(.collapsed) {
+    box-shadow: none !important;
+    background-color: transparent;
+}
+
+@media (max-width: 1399px) {
+    .footer span {
+        width:40%;
+    }
+}
+
+@media (max-width:1199px) {
+    .headerpcboxs {
+        display: none;
+    }
+    .headerpcbox {
+        display: none;
+    }
+    .mobileheaderbox {
+        display: block;
+    }
+    .TopButtonBoxActive {
+        right: 0;
+    }
+    .footer .leftbox {
+        margin-bottom: 50px;
+    }
+
+    .footer .rightbox {
+
+    }
+
+    .footer span {
+        width:100%;
+
+    }
+    .footer span:first-child {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .subheaderbox .container {
+        max-width:100%;
+    }
+}
+
+@media (max-width: 582px) {
+    .subheaderbox .firstmenu {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .modal .modalbody {
+        padding: 15px;
+    }
+    .modal .modalbody .applyinfobox {
+        padding: 15px;
+    }
+    .modal .modalheader > div  {
+        font-size: 17px;
+    }
+
+    .subheaderbox .submenubox .acc button {
+        font-size: 15px;
+        padding: 0 20px;
+    }
+    .subheaderbox .subimgbox img {
+        height: 140px;
+    }
+    .subheaderbox .subimgbox h2 {
+        font-size: 24px;
+    }
+    .modalwrap .modalactivebtn {
+        width:100%;
+    }
+}

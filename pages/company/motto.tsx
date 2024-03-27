@@ -23,16 +23,17 @@ const Motto:NextPage = () => {
             />
             <div className={styles.subwrap}>
                 <div className={styles.section1}>
-                    <Container>
+                    <Container className={styles.container}>
                         <h3>
                             정리(整理) · 정돈(整頓)이<br/>
                             회사를 유지하고 발전시키는 원동력이 된다!
                         </h3>
-                        <Image src={'/sub/value.png'} alt={'sub-img'}/>
+                        <Image src={'/sub/value.png'} alt={'sub-img'} className={'d-none d-xl-block d-lg-block d-md-block'}/>
+                        <Image src={'/mo/sub/mo_value.png'} alt={'sub-img'} className={'d-block d-xl-none d-lg-none d-md-none d-sm-block'}/>
                     </Container>
                 </div>
                 <div className={styles.section2}>
-                    <Container>
+                    <Container className={styles.container}>
                         <div className={styles.contentheader}>
                             <strong>비전</strong><span>Vision</span>
                             <h3>GLOBAL NO1 : TOP 2020</h3>
@@ -44,18 +45,18 @@ const Motto:NextPage = () => {
                         <div className={styles.contentbody}>
                             <div className={styles.contentbox1}>
                                 <strong>목표</strong><span>Target</span>
-                                <Row className={'mt-4'}>
-                                    <Col xl={4} xs={12}>
+                                <Row className={'mt-4 gy-xl-0 gy-sm-0 gy-4'}>
+                                    <Col xl={4} sm={4} xs={12}>
                                         <div className={styles.infobox}>
                                             <p>불량 &#39;0&#39;화</p>
                                         </div>
                                     </Col>
-                                    <Col xl={4} xs={12}>
+                                    <Col xl={4} sm={4} xs={12}>
                                         <div className={styles.infobox}>
                                             <p>고장 &#39;0&#39;화</p>
                                         </div>
                                     </Col>
-                                    <Col xl={4} xs={12}>
+                                    <Col xl={4} sm={4} xs={12}>
                                         <div className={styles.infobox}>
                                             <p>재해 &#39;0&#39;화</p>
                                         </div>
@@ -65,10 +66,10 @@ const Motto:NextPage = () => {
                             <div className={styles.contentbox2}>
                                 <strong>활동전략</strong><span>Activity Strategy</span>
                                 <div className={styles.box}>
-                                    <Row className={'mt-4'}>
-                                        <Col xl={4} xs={12} className={styles.col1}>
+                                    <Row className={'mt-4 gy-lg-0 gy-md-0 gy-sm-5 gy-5'}>
+                                        <Col xl={4} lg={4} md={4} xs={12} className={styles.col1}>
                                             <div className={styles.infobox}>
-                                                <Image src={'/sub/activity_bg1.png'} alt={'sub-icon'} className={'w-100'} />
+                                                <Image src={'/sub/activity_bg1.png'} alt={'sub-icon'} className={styles.w100} />
                                                 <div className={styles.boxwrap}>
                                                     <div className={styles.imgbox}>
                                                         <Image src={'/sub/activity_icon1.svg'} alt={'sub-icon'} />
@@ -85,9 +86,9 @@ const Motto:NextPage = () => {
                                                 </div>
                                             </div>
                                         </Col>
-                                        <Col xl={4} xs={12} className={styles.col2}>
+                                        <Col xl={4} lg={4} md={4} xs={12} className={styles.col2}>
                                             <div className={styles.infobox}>
-                                                <Image src={'/sub/activity_bg2.png'} alt={'sub-icon'} className={'w-100'} />
+                                                <Image src={'/sub/activity_bg2.png'} alt={'sub-icon'} className={styles.w100} />
                                                 <div className={styles.boxwrap}>
                                                     <div className={styles.imgbox}>
                                                         <Image src={'/sub/activity_icon2.svg'} alt={'sub-icon'}/>
@@ -104,9 +105,9 @@ const Motto:NextPage = () => {
                                                 </div>
                                             </div>
                                         </Col>
-                                        <Col xl={4} xs={12} className={styles.col3}>
+                                        <Col xl={4} lg={4} md={4} xs={12} className={styles.col3}>
                                             <div className={styles.infobox}>
-                                                <Image src={'/sub/activity_bg3.png'} alt={'sub-icon'} className={'w-100'} />
+                                                <Image src={'/sub/activity_bg3.png'} alt={'sub-icon'} className={styles.w100} />
                                                 <div className={styles.boxwrap}>
                                                     <div className={styles.imgbox}>
                                                         <Image src={'/sub/activity_icon3.svg'} alt={'sub-icon'}/>
@@ -130,25 +131,25 @@ const Motto:NextPage = () => {
                                 <strong>인프라</strong><span>Infrastructure</span>
                                 <div className={styles.box}>
                                     <Row>
-                                        <Col xl={3} xs={12}>
+                                        <Col xl={3} xs={6}>
                                             <div className={styles.infobox}>
                                                 <span className={styles.linespan}></span>
                                                 <p>제안활동</p>
                                             </div>
                                         </Col>
-                                        <Col xl={3} xs={12}>
+                                        <Col xl={3} xs={6}>
                                             <div className={styles.infobox}>
                                                 <span className={styles.linespan}></span>
                                                 <p>교육,훈련</p>
                                             </div>
                                         </Col>
-                                        <Col xl={3} xs={12}>
+                                        <Col xl={3} xs={6}>
                                             <div className={styles.infobox}>
                                                 <span className={styles.linespan}></span>
                                                 <p>3정 5S활동 TPM</p>
                                             </div>
                                         </Col>
-                                        <Col xl={3} xs={12}>
+                                        <Col xl={3} xs={6}>
                                             <div className={styles.infobox}>
                                                 <span className={styles.linespan}></span>
                                                 <p>보전활동</p>

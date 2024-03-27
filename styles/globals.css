@@ -141,6 +141,27 @@ ul {
 
 .pagenation-wrap {}
 
+@media (max-width: 976px) {
+  #tab-box .nav .nav-item {
+    width:49%;
+  }
+  #tab-box .nav {
+    column-gap: 10px;
+  }
+}
+
+@media (max-width: 976px) {
+  #tab-box .nav .nav-item {
+    width: 47%;
+  }
+}
+
+@media (max-width: 466px) {
+  #tab-box .nav .nav-item {
+    width: 100%;
+  }
+}
+
 
 
 

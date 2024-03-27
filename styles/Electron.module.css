@@ -129,3 +129,56 @@
     padding-bottom: 70px;
     border-bottom: solid 1px #bbb;
 }
+
+@media(max-width: 1199px) {
+    .tabbox .section1 img {
+        width:100%;
+    }
+    .tabbox .section2 img {
+        width:100%;
+    }
+    .contentbody .titlebox h5 br {
+        display: none;
+    }
+    .contentbody .titlebox h5 {
+        margin-bottom: 30px;
+    }
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 824px) {
+    .tabbox .textbox {
+        display: block;
+    }
+}
+
+@media (max-width: 672px) {
+    .contentbody .tabbox a {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 544px) {
+    .contentbody .tabbox a {
+        font-size: 14px;
+    }
+    .contentheader dl dd {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 412px) {
+    .subwrap .contentheader h3 {
+        font-size: 28px;
+    }
+    .contentheader p {
+        font-size: 13px;
+    }
+}
+@media (max-width: 374px) {
+    .contentheader dl dd {
+        font-size: 12px;
+    }
+}

@@ -20,7 +20,7 @@ const Product: NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.contentheader}>
                         <h3>
                             <strong>고객만족 실현을 최우선</strong>으로 생각하는 제품과 서비스

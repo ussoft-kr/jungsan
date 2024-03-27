@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
+import {extractFirstImageUrl} from "lib/thumbnail";
+import {extractVimeoUrl} from "lib/extracttext";
 
 const prisma = new PrismaClient();
 
@@ -39,14 +41,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 } : {},
             });
 
-
+            // 썸네일 이미지 URL 추출 로직 추가 가능
+            const noticesWithThumbnailsAndText = notices.map(notice => ({
+                ...notice,
+                thumbnail: extractFirstImageUrl(notice.content),
+                text: extractVimeoUrl(notice.content), // 텍스트 추출 로직 적용
+            }));
             // 조회된 공지사항 목록을 응답으로 반환
             return res.status(200).json({notices, total});
-
-
-
-
-
 
         } catch (error) {
             console.error("Notice list fetch error:", error);

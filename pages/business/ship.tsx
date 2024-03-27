@@ -21,13 +21,13 @@ const Ship:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.contentheader}>
                         <h3>
                             고객의 <strong>신뢰</strong>와 더불어 <strong>기술과 품질의<br/>
                             자부심을 키워가는</strong> (주)중산기업 입니다.
                         </h3>
-                        <Row>
+                        <Row className={'gy-xl-0 gy-5'}>
                             <Col xl={6} xs={12}>
                                 <div className={styles.imgbox}>
                                     <Image src={'/sub/marine_engine_part01.jpg'} alt={'sub-img'} />
@@ -57,7 +57,7 @@ const Ship:NextPage = () => {
                             </Col>
                             <Col xl={10} xs={12}>
                                 <div className={styles.introbox}>
-                                    <Row className={'gy-4'}>
+                                    <Row className={'gy-xl-4 gy-5'}>
                                         <Col xl={4} xs={12}>
                                             <div className={styles.infobox}>
                                                 <div className={styles.imgbox}>

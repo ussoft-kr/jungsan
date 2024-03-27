@@ -72,3 +72,25 @@
 .signbox img {
     margin-top:-30px;
 }
+
+@media (max-width: 1199px) {
+    .textbox {
+        padding-left: 0;
+        margin-top: 50px;
+    }
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 655px) {
+    .textbox p br {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .textbox h3 {
+        font-size: 29px;
+    }
+}

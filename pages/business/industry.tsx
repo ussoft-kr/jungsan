@@ -21,7 +21,7 @@ const Industry:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.contentheader}>
                         <h3>
                             <strong>비상발전기 , 보일러 , 제철소 압연롤 , 연륙교 철골 구조물<br />
@@ -56,7 +56,7 @@ const Industry:NextPage = () => {
                             </Col>
                             <Col xl={10} xs={12}>
                                 <div className={styles.introbox}>
-                                    <Row className={'gy-4'}>
+                                    <Row className={'gy-xl-4 gy-5'}>
                                         <Col xl={4} xs={12}>
                                             <div className={styles.infobox}>
                                                 <div className={styles.imgbox}>

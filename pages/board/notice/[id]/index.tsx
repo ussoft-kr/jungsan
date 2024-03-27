@@ -80,7 +80,7 @@ const NoticeDetailPage = () => {
                 ]}
             />
             <div className={styles.boardviewwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.boardviewheader}>
                         <h1>{notice.title}</h1>
                         <span>{new Date(notice.postedAt).toLocaleDateString()}</span>

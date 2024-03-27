@@ -17,6 +17,7 @@ async function hashPasswordAndUpdateUser(userId: number, plainPassword: string):
 }
 
 // 사용자 ID와 평문 비밀번호로 함수 호출
+// 실행방법은 터미널에서 node --loader ts-node/esm updatepassword.ts
 const userId = 2; // 사용자 ID 예시
 const plainPassword = 'usus9789##'; // 업데이트할 평문 비밀번호
 

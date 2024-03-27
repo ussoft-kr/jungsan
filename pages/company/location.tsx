@@ -23,7 +23,7 @@ const Location:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.contentheader}>
                         <h3>
                             고객의 <strong>신뢰</strong>와 더불어 <strong>기술과 품질의<br/>

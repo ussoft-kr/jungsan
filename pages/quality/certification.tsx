@@ -140,11 +140,36 @@ const Certification:NextPage = () => {
                                     System (KR)
                                 </p>
                             </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/certification18.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>
+                                    Process quality certificate<br/>
+                                </p>
+                            </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/certification19.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>
+                                    KOSHIPA Certificateof Reliability<br/>
+                                </p>
+                            </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/certification20-1.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>
+                                    Origin certification exporter<br/>
+                                    certificate for each item
+                                </p>
+                            </Col>
                         </Row>
                     </div>
                     <div className={styles.section2}>
                         <h4>
-                        <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
+                            <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
                             확인서
                         </h4>
                         <Row className={'gy-5'}>
@@ -189,6 +214,30 @@ const Certification:NextPage = () => {
                                     <Image src={'/sub/confirmation06.jpg'} alt={'sub-img'}/>
                                 </div>
                                 <p>부품ㆍ소재전문기업확인서</p>
+                            </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/confirmation07.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>동반성장우수상</p>
+                            </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/confirmation08.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>모범납세자상(기획재정부장관 표창)</p>
+                            </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/confirmation09.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>성과공유기업 확인서</p>
+                            </Col>
+                            <Col xl={3} xs={12}>
+                                <div className={styles.imgbox}>
+                                    <Image src={'/sub/confirmation10.jpg'} alt={'sub-img'}/>
+                                </div>
+                                <p>HD현대중공업품질 품질우수협력회사 확인서</p>
                             </Col>
                         </Row>
                     </div>

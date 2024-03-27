@@ -615,6 +615,10 @@
     margin-bottom:0;
 }
 
+.newslatestwrap .newsrow {
+    align-items: center;
+}
+
 .newslatestwrap table {
     width:100%;
 
@@ -696,3 +700,84 @@
         background-size: unset;
     }
 }
+
+@media (max-width: 1199px) {
+    .section5 .infobox img {
+        width:100%;
+    }
+    .newslatestwrap .leftcol .thumbnailtd img {
+        width:100%;
+    }
+    .newslatestwrap table tbody td .infobox strong {
+        font-size: 18px;
+    }
+    .newslatestwrap table tbody td img {
+
+        width:100%;
+    }
+    .section1 .contentbody .textbox p {
+        margin-bottom: 70px;
+    }
+    .section3 {
+        margin-top: 30px;
+    }
+    .section2 .titlebox h3 {
+        padding-left: 0;
+        font-size: 23px;
+        text-align: center;
+        line-height: 40px;
+        margin-bottom: 50px;
+    }
+    .section2 .downloadbox .absolutebox a {
+        padding: 70px 0;
+    }
+    .section2 .downloadbox .downbox {
+      padding-top: 0;
+        bottom:10px;
+        top:auto;
+    }
+    .section4 {
+        padding-top: 50px;
+    }
+    .section4 .contentheader h4 {
+        font-size:23px;
+        line-height: 35px;
+    }
+
+    .section4 .infoheader {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    .section4 .imgbox p {
+
+    }
+    .section5 {
+        padding:50px 0;
+        background: none;
+        height: 100%;
+
+    }
+    .section5 .infobox h4 {
+        font-size: 30px;
+    }
+    .section5 .inquiryheader {
+        display: block;
+        margin-top: 40px;
+    }
+    .section5 .inquiryheader span {
+        width: 100%;
+    }
+    .section5 .submitbox button {
+        position: unset;
+        margin-top: 0;
+        width:80%;
+    }
+    .section5 .submitbox {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .newslatestwrap {
+        margin-top: 70px;
+    }
+}
+

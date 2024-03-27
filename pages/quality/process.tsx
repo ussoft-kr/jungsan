@@ -19,21 +19,24 @@ const Process:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.section1}>
                         <h4>
                             <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
                             생산 과정
                         </h4>
                         <div className={styles.imgbox}>
-                            <Image src={'/sub/quality_process02.png'} alt={'sub-img'}/>
+                            <Image src={'/sub/quality_process02.png'} alt={'sub-img'} className={'d-none d-xl-block d-lg-block d-md-block'}/>
+                            <Image src={'/mo/sub/mo_quality_process02.png'} alt={'sub-img'} className={'d-block d-xl-none d-lg-none d-md-none'}/>
+
                         </div>
                         <h4>
                             <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
                             제작 공정도
                         </h4>
                         <div className={styles.imgbox}>
-                            <Image src={'/sub/quality_process03.png'} alt={'sub-img'}/>
+                            <Image src={'/sub/quality_process03.png'} alt={'sub-img'} className={'d-none d-xl-block d-lg-block d-md-block'} />
+                            <Image src={'/mo/sub/mo_quality_process03.jpg'} alt={'sub-img'} className={'d-block d-xl-none d-lg-none d-md-none'} />
                         </div>
                     </div>
                     <div className={styles.section2}>

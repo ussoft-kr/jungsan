@@ -113,3 +113,42 @@
 .leftli {
     padding-left: 10px;
 }
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .buttonbox:after {
+        display: none;
+    }
+    .indicator {
+        display: none;
+    }
+
+    .subwrap button {
+        width:20%;
+        display: inline-block;
+    }
+    .textbox {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 833px) {
+    .subwrap .infobox h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 744px) {
+    .subwrap .infobox {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .subwrap button {
+        width:33%;
+    }
+}

@@ -54,7 +54,7 @@ const LoginIndex:NextPage = () => {
                                     <h2>중산기업 로그인</h2>
                                 </div>
                             </Col>
-                            <Col xl={6} xs={12} className={'d-none d-xl-block p-0'}>
+                            <Col xl={6} xs={12} className={'d-block d-xl-block  p-0'}>
                                 <div className={styles.infobox}>
                                     <div className={styles.formbox}>
                                         <h3>중산기업 로그인</h3>

@@ -23,10 +23,11 @@ const Overview:NextPage = () => {
             />
             <div className={styles.subwrap}>
                 <div className={styles.section1}>
-                    <Container>
+                    <Container className={styles.container}>
                         <div className={styles.contentheader}>
                             <h3>GLOBAL NO 1 : TOP 2020</h3>
-                            <p>고객의신뢰와 더불어기술과 품질의 자부심을 키워갑니다.</p>
+                            <p className={'d-none d-xl-block'}>고객의신뢰와 더불어기술과 품질의 자부심을 키워갑니다.</p>
+                            <p className={'d-block d-xl-none'}>고객의신뢰와 더불어기술과 품질의<br />자부심을 키워갑니다.</p>
                         </div>
                         <div className={styles.contentbody}>
                             <div className={styles.imgbox}>
@@ -139,14 +140,14 @@ const Overview:NextPage = () => {
                     </Container>
                 </div>
                 <div className={styles.section2}>
-                    <Container>
+                    <Container className={styles.container}>
                         <h4>
                             <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
                             사업부문
                         </h4>
                         <div className={`${styles.contentbox1} mt-2`}>
                             <strong>01</strong><span>사업분야</span>
-                            <Row className={'mt-3'}>
+                            <Row className={'mt-3 gy-xl-0 gy-4'}>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
                                         <p>선박엔진 부품사업</p>
@@ -171,7 +172,7 @@ const Overview:NextPage = () => {
                         </div>
                         <div className={styles.contentbox1}>
                             <strong>02</strong><span>생산분야</span>
-                            <Row className={'mt-3'}>
+                            <Row className={'mt-3 gy-xl-0 gy-4'}>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
                                         <p>선박엔진용 Bolf & Nut 류</p>
@@ -219,7 +220,7 @@ const Overview:NextPage = () => {
                                 </Col>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.infobox}>
-                                        <p>DNV-GL HEAT TREATMENT</p>
+                                        <p>DNV HEAT TREATMENT</p>
                                     </div>
                                 </Col>
                                 <Col xl={3} xs={12}>

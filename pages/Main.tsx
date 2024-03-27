@@ -87,7 +87,8 @@ const Main:NextPage = () => {
                 <Slider {...settings}>
                     <div className={styles.slideitem}>
                         <div className={styles.imgbox}>
-                            <Image src={'/main/main_img1.jpg'} alt={'main-img'}/>
+                            <Image src={'/main/main_img1.jpg'} alt={'main-img'} className={'d-none d-xl-block'}/>
+                            <Image src={'/mo/main/mo_main_img1.jpg'} alt={'main-img'} className={'d-block d-xl-none'}/>
                         </div>
                         <div className={styles.textbox}>
                             <h3>JUNGSAN</h3>
@@ -97,7 +98,8 @@ const Main:NextPage = () => {
                     </div>
                     <div className={styles.slideitem}>
                         <div className={styles.imgbox}>
-                            <Image src={'/main/main_img2.jpg'} alt={'main-img'}/>
+                            <Image src={'/main/main_img2.jpg'} alt={'main-img'} className={'d-none d-xl-block'}/>
+                            <Image src={'/mo/main/mo_main_img2.jpg'} alt={'main-img'} className={'d-block d-xl-none'}/>
                         </div>
                         <div className={styles.textbox}>
                             <h3>JUNGSAN</h3>
@@ -107,7 +109,8 @@ const Main:NextPage = () => {
                     </div>
                     <div className={styles.slideitem}>
                         <div className={styles.imgbox}>
-                            <Image src={'/main/main_img3.jpg'} alt={'main-img'}/>
+                            <Image src={'/main/main_img3.jpg'} alt={'main-img'} className={'d-none d-xl-block'}/>
+                            <Image src={'/mo/main/mo_main_img3.jpg'} alt={'main-img'} className={'d-block d-xl-none'}/>
                         </div>
                         <div className={styles.textbox}>
                             <h3>JUNGSAN</h3>
@@ -122,11 +125,12 @@ const Main:NextPage = () => {
                 <Container>
                     <div className={styles.contentheader}>
                         <h4>사업분야</h4>
-                        <p>고객의 성공 파트너 (주)중산기업이 최고의 서비스를 제공하겠습니다.</p>
+                        <p className={'d-none d-xl-block'}>고객의 성공 파트너 (주)중산기업이 최고의 서비스를 제공하겠습니다.</p>
+                        <p className={'d-block d-xl-none'}>고객의 성공 파트너 (주)중산기업이<br />최고의 서비스를 제공하겠습니다.</p>
                     </div>
                     <div className={styles.contentbody}>
                         <Row>
-                            <Col xl={3} xs={12}>
+                            <Col xl={3} md={6} sm={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.imgbox}>
                                         <Image src={'main/main_business01.png'} alt={'main-img'}/>
@@ -147,7 +151,7 @@ const Main:NextPage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xl={3} xs={12}>
+                            <Col xl={3} md={6} sm={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.imgbox}>
                                         <Image src={'main/main_business02.png'} alt={'main-img'}/>
@@ -168,7 +172,7 @@ const Main:NextPage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xl={3} xs={12}>
+                            <Col xl={3} md={6} sm={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.imgbox}>
                                         <Image src={'main/main_business03.png'} alt={'main-img'}/>
@@ -189,7 +193,7 @@ const Main:NextPage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xl={3} xs={12}>
+                            <Col xl={3} md={6} sm={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.imgbox}>
                                         <Image src={'main/main_business04.png'} alt={'main-img'}/>
@@ -235,7 +239,7 @@ const Main:NextPage = () => {
                                 </div>
                             </Col>
                             <Col xl={6} xs={12}>
-                                <Row className={'row-cols-3 justify-content-end'}>
+                                <Row className={'row-cols-xl-3 row-cols-2 justify-content-end'}>
                                     <Col>
                                         <div className={styles.downloadbox}>
                                             <div className={styles.imgbox}>
@@ -309,7 +313,7 @@ const Main:NextPage = () => {
                         </h4>
                     </div>
                     <div className={styles.contentbody}>
-                        <Row>
+                        <Row className={'gy-xl-0 gy-4'}>
                             <Col xl={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.infoheader}>
@@ -321,19 +325,19 @@ const Main:NextPage = () => {
                                         </Button>
                                     </div>
                                     <Row>
-                                        <Col xl={4} xs={12}>
+                                        <Col xl={4} xs={4}>
                                             <div className={styles.imgbox}>
                                                 <Image src={'main/certification_img01.jpg'} alt={'main-img'}/>
                                                 <p>ISO 9001 (DNV.GL)</p>
                                             </div>
                                         </Col>
-                                        <Col xl={4} xs={12}>
+                                        <Col xl={4} xs={4}>
                                             <div className={styles.imgbox}>
                                                 <Image src={'main/certification_img02.jpg'} alt={'main-img'}/>
                                                 <p>ISO 14001 (DNV.GL)</p>
                                             </div>
                                         </Col>
-                                        <Col xl={4} xs={12}>
+                                        <Col xl={4} xs={4}>
                                             <div className={styles.imgbox}>
                                                 <Image src={'main/certification_img03.jpg'} alt={'main-img'}/>
                                                 <p>ISO 45001 (DNV.GL)</p>
@@ -353,22 +357,24 @@ const Main:NextPage = () => {
                                         </Button>
                                     </div>
                                     <Row>
-                                        <Col xl={4} xs={12}>
+                                        <Col xl={4} xs={4}>
                                             <div className={styles.imgbox}>
                                                 <Image src={'main/confirmation_img01.jpg'} alt={'main-img'}/>
                                                 <p>대통령표창장</p>
                                             </div>
                                         </Col>
-                                        <Col xl={4} xs={12}>
+                                        <Col xl={4} xs={4}>
                                             <div className={styles.imgbox}>
                                                 <Image src={'main/confirmation_img02.jpg'} alt={'main-img'}/>
-                                                <p>국무총리 표창장</p>
+                                                <p className={'d-none d-xl-block'}>국무총리 표창장</p>
+                                                <p className={'d-block d-xl-none'}>국무총리<br />표창장</p>
                                             </div>
                                         </Col>
-                                        <Col xl={4} xs={12}>
+                                        <Col xl={4} xs={4}>
                                             <div className={styles.imgbox}>
                                                 <Image src={'main/confirmation_img03.jpg'} alt={'main-img'}/>
-                                                <p>기업부설연구소인정서</p>
+                                                <p className={'d-none d-xl-block'}>기업부설연구소인정서</p>
+                                                <p className={'d-block d-xl-none'}>기업부설<br />연구소<br />인정서</p>
                                             </div>
                                         </Col>
                                     </Row>

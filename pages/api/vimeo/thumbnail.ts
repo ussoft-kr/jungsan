@@ -2,10 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const videoUrl = req.query.url as string;
     // 수정된 정규표현식으로 비디오 ID 추출
     const regex = /vimeo\.com\/(\d+)/;

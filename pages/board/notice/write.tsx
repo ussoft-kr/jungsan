@@ -100,7 +100,7 @@ const NoticeWrite:NextPage = () => {
                 ]}
             />
             <div className={styles.writewrap}>
-                <Container>
+                <Container className={styles.container}>
                     <Form onSubmit={handleSubmit} encType={'multipart/form-data'}>
                         <InputGroup className={styles.writegroupbox}>
                             <Form.Control

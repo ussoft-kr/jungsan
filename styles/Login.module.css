@@ -99,3 +99,31 @@
 .inputbox {
     position: relative;
 }
+
+@media (max-width: 1700px) {
+    .infobox {
+        padding: 60px;
+    }
+    .formbox {
+        min-height: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 1560px) {
+    .infobox {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .subwrap {
+        background: #f3f5f7;
+    }
+}
+
+@media (max-width: 500px) {
+    .formbox {
+        padding: 15px;
+    }
+}

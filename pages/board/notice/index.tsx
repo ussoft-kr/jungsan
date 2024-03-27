@@ -33,6 +33,24 @@ const NoticeIndex:NextPage = () => {
         fetchNotices();
     }, [router.query.search]);
 
+    async function fetchVimeoThumbnail(videoUrl: string): Promise<string> {
+        try {
+            // API 엔드포인트로 요청을 보냅니다. videoUrl을 쿼리 파라미터로 포함시킵니다.
+            const response = await axios.get(`/api/vimeo/thumbnail?url=${encodeURIComponent(videoUrl)}`);
+            // 응답에서 썸네일 URL을 추출합니다.
+            const thumbnailUrl = response.data.thumbnailUrl;
+            return thumbnailUrl;
+        } catch (error) {
+            console.error('Error fetching Vimeo thumbnail:', error);
+            return '';
+        }
+    }
+
+
+
+
+
+
     const fetchNotices = async (page: number = currentPage) => {
         // 현재 페이지 번호와 검색 쿼리를 기반으로 쿼리 파라미터를 구성합니다.
         const searchQuery = router.query.search;
@@ -119,7 +137,7 @@ const NoticeIndex:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <BoardSearch onSearch={handleSearch} />
                     <div className={styles.boardwebzinebox}>
                         <table>
@@ -127,17 +145,17 @@ const NoticeIndex:NextPage = () => {
                             <tbody>
                             {notices.map((item, index) => (
                             <tr key={index}>
-                                {session ?
-                                <td className={styles.checktd}>
+
+                                <td className={styles.thumbnailtd}>
+                                    {session ?
                                     <Form.Check
                                         type={'checkbox'}
                                         checked={checkedState[item.id] || false}
                                         onChange={(e) => handleCheck(item.id, e.target.checked)}
+                                        className={styles.checkdelete}
                                     />
-                                </td>
-                                    : <></>
-                                }
-                                <td className={styles.thumbnailtd}>
+                                        : <></>
+                                    }
                                     <Image src={extractFirstImageUrl(item.content) || '/sub/logo_no-thumbnail.jpg'} alt="Thumbnail" />
                                 </td>
                                 <td className={styles.infotd}>

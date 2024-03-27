@@ -21,7 +21,7 @@ const Intro:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <Row>
                         <Col xl={5} xs={12}>
                             <div className={styles.imgbox}>

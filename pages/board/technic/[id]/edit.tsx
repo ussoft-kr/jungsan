@@ -132,7 +132,7 @@ const EditNotice = () => {
                 ]}
             />
             <div className={styles.writewrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.box}>
                         <form onSubmit={handleSubmit}>
                             <InputGroup className={styles.writegroupbox}>

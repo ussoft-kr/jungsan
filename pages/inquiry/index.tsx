@@ -100,9 +100,10 @@ const Inquiry:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.contentheader}>
-                        <h3>(주)중산기업은 <span>고객 만족을 위한 원활한 소통</span>을 진행합니다.</h3>
+                        <h3 className={'d-none d-xl-block d-lg-block d-md-block d-sm-block'}>(주)중산기업은 <span>고객 만족을 위한 원활한 소통</span>을 진행합니다.</h3>
+                        <h3 className={'d-block d-xl-none d-lg-none d-md-none d-sm-none'}>(주)중산기업은 <span>고객 만족을 위한 <br />원활한 소통</span>을 진행합니다.</h3>
                     </div>
                     <div className={styles.inquiryinfobox}>
                         <ul>

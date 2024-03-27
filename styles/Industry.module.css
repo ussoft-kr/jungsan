@@ -75,3 +75,31 @@
     margin-bottom: 0;
 
 }
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 100%;
+    }
+    .contentbody .titlebox h5 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 741px) {
+    .subwrap .contentheader h3 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 535px) {
+    .subwrap .contentheader h3 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 445px) {
+    .subwrap .contentheader h3 {
+        font-size: 15px;
+        line-height: 30px;
+    }
+}

@@ -1,12 +1,15 @@
 import styles from 'styles/Layout.module.css';
 import {Button, Container, Form, Image, Nav, Navbar} from "react-bootstrap";
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import MobileOffcanvas from "./MobileOffcanvas";
+import {useRouter} from "next/router";
 
 
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const router = useRouter();
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -20,6 +23,16 @@ function Header() {
             window.removeEventListener('scroll', handleScroll);
         }
     }, []);
+
+
+    const handleChange = (event : React.ChangeEvent<HTMLSelectElement>) => {
+        const lang = event.target.value;
+        if (lang === 'EN') {
+            router.push('/en').then(r => '');
+        } else if (lang === 'KR') {
+            router.push('/').then(r => '');
+        }
+    };
 
     return (
         <header className={styles.header}>
@@ -65,9 +78,9 @@ function Header() {
                                 <Image src={'/main/language_wh.svg'} alt={'main-icon'} className={styles.normalimg} />
                                 <Image src={'/main/language_bl.svg'} alt={'main-icon'} className={styles.activeimg} />
                             </span>
-                            <Form.Select className={'shadow-none'}>
-                                <option>KR</option>
-                                <option>EN</option>
+                            <Form.Select className={'shadow-none'} onChange={handleChange}>
+                                <option value={'KR'}>KR</option>
+                                <option value={'EN'}>EN</option>
                             </Form.Select>
                         </Nav.Item>
                         <Nav.Item>
@@ -79,6 +92,18 @@ function Header() {
                     </Nav>
                 </Container>
             </Navbar>
+            </div>
+            <div className={styles.mobileheaderbox}>
+                <Container fluid>
+                    <Navbar className={'justify-content-between'}>
+                        <Navbar.Brand className={styles.logobox}>
+                            <Link href={'/'}>
+                                <Image src={'/main/header_logo_col.png'} alt={'logo'} className={styles.normalimg} />
+                            </Link>
+                        </Navbar.Brand>
+                        <MobileOffcanvas />
+                    </Navbar>
+                </Container>
             </div>
         </header>
     )

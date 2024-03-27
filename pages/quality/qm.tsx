@@ -18,7 +18,7 @@ const Qm:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.section1}>
                         <h4>
                             <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
@@ -76,7 +76,8 @@ const Qm:NextPage = () => {
                             </div>
                         </div>
                         <div className={styles.imgbox}>
-                            <Image src={'/sub/quality_process01.png'} alt={'sub-img'}/>
+                            <Image src={'/sub/quality_process01.png'} alt={'sub-img'} className={'d-none d-xl-block d-lg-block d-md-block'}/>
+                            <Image src={'/mo/sub/mo_quality_process01.png'} alt={'sub-img'} className={'d-block d-xl-none d-lg-none d-md-none'}/>
                         </div>
                     </div>
                     <div className={styles.section2}>

@@ -162,3 +162,26 @@
     border-radius: 0;
 }
 
+
+@media(max-width: 1199px) {
+    .container {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 829px) {
+    .contentheader h3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 459px) {
+    .applybox {
+        display: block;
+    }
+    .applyview {
+        margin-top: 30px;
+    }
+}
+

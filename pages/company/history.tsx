@@ -64,19 +64,23 @@ const History:NextPage = () => {
                 ]}
             />
                 <div className={styles.subwrap}>
-                    <Container>
+                    <Container className={styles.container}>
                         <div className={styles.contentheader}>
                             <h3>(주)중산이 걸어온 길</h3>
-                            <p>
+                            <p className={'d-none d-xl-block'}>
                                 뜨거운 열정으로 발전에 발전을 거듭해온 (주)중산기업입니다.<br/>
                                 대한민국을 넘어 세계로 발전해 나가며 사회에 기여하고 인정받는 기업이 되겠습니다.
+                            </p>
+                            <p className={'d-block d-xl-none'}>
+                                뜨거운 열정으로 발전에 발전을 거듭해온<br />(주)중산기업입니다.<br/>
+                                대한민국을 넘어 세계로 발전해 나가며 사회에<br />기여하고 인정받는 기업이 되겠습니다.
                             </p>
                         </div>
                         <div className={styles.contentbody}>
                             <Row>
                                 <Col xl={3} xs={12}>
                                     <div className={styles.buttonbox}>
-                                        <div ref={indicatorRef} className={styles.indicator}></div>
+                                    <div ref={indicatorRef} className={styles.indicator}></div>
                                         <Button
                                             type={'button'}
                                             className={activeYear === '2023' ? styles.activebtn : styles.disbtn}

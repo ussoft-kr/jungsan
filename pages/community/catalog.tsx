@@ -19,14 +19,14 @@ const Catalog:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <h4>
                         <Image src={'/sub/title_icon.png'} alt={'sub-img'}/>
                         E-CATALOGUE
                     </h4>
                     <div className={styles.cataloguebox}>
-                        <Row>
-                            <Col xl={4} xs={12}>
+                        <Row className={'gy-xl-0 gy-sm-0 gy-5'}>
+                            <Col xl={4} sm={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.infoheader}>
                                         <p>플랜트 & 엔진</p>
@@ -42,7 +42,7 @@ const Catalog:NextPage = () => {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xl={4} xs={12}>
+                            <Col xl={4} sm={6} xs={12}>
                                 <div className={styles.infobox}>
                                     <div className={styles.infoheader}>
                                         <p>풀림방지솔루션</p>

@@ -56,3 +56,10 @@
     position: relative;
     top:-1px;
 }
+
+
+@media(max-width: 1199px) {
+    .container {
+        max-width: 100%;
+    }
+}

@@ -19,6 +19,30 @@ function ProductSlider() {
         arrows: false,
         margin: 10,
         fade: false, // fade 옵션을 false로 설정하거나 제거
+        responsive: [
+
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
     };
 
     return (

@@ -21,7 +21,7 @@ const Plant:NextPage = () => {
                 ]}
             />
             <div className={styles.subwrap}>
-                <Container>
+                <Container className={styles.container}>
                     <div className={styles.contentheader}>
                         <h3>
                             <strong>각종 플랜트에 체결용으로 사용</strong>되며 특수재질로 제작<br />
@@ -57,7 +57,7 @@ const Plant:NextPage = () => {
                             </Col>
                             <Col xl={10} xs={12}>
                                 <div className={styles.introbox}>
-                                    <Row className={'gy-4'}>
+                                    <Row className={'gy-xl-4 gy-5'}>
                                         <Col xl={4} xs={12}>
                                             <div className={styles.infobox}>
                                                 <div className={styles.imgbox}>
